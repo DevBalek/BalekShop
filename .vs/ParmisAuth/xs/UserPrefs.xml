@@ -1,4 +1,58 @@
 ﻿<Properties StartupConfiguration="{66063B9D-5F50-4203-8B74-8797D3ACA281}|https">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.ParmisAuth FirstBuild="True" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.ParmisAuth PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ParmisAuth/Program.cs">
+    <Files>
+      <File FileName="ParmisAuth/Controllers/HomeController.cs" />
+      <File FileName="ParmisAuth/Data/ApplicationDbContext.cs" />
+      <File FileName="ParmisAuth/Data/Migrations/ApplicationDbContextModelSnapshot.cs" />
+      <File FileName="ParmisAuth/Data/Migrations/00000000000000_CreateIdentitySchema.cs" />
+      <File FileName="ParmisAuth/Data/Migrations/00000000000000_CreateIdentitySchema.Designer.cs" />
+      <File FileName="ParmisAuth/Views/Shared/_LoginPartial.cshtml" />
+      <File FileName="ParmisAuth/Views/Shared/_Layout.cshtml" />
+      <File FileName="ParmisAuth/Views/Shared/_ValidationScriptsPartial.cshtml" />
+      <File FileName="ParmisAuth/Views/Home/Index.cshtml" />
+      <File FileName="ParmisAuth/Views/Home/Privacy.cshtml" />
+      <File FileName="ParmisAuth/Areas/Identity/Pages/_ViewStart.cshtml" />
+      <File FileName="ParmisAuth/Views/_ViewStart.cshtml" />
+      <File FileName="ParmisAuth/Views/_ViewImports.cshtml" />
+      <File FileName="ParmisAuth/Views/Shared/_Layout.cshtml.css" />
+      <File FileName="ParmisAuth/Views/Shared/Error.cshtml" />
+      <File FileName="ParmisAuth/Program.cs" Line="43" Column="1" />
+      <File FileName="ParmisAuth/Properties/launchSettings.json" />
+      <File FileName="ParmisAuth/Controllers/CategoryController.cs" />
+      <File FileName="ParmisAuth/Views/Category/Phone.cshtml" />
+      <File FileName="ParmisAuth/Views/Category/Computer.cshtml" />
+      <File FileName="ParmisAuth/Controllers/CartController.cs" />
+      <File FileName="ParmisAuth/Views/Cart/Index.cshtml" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ParmisAuth" expanded="True">
+            <Node name="ParmisAuth" expanded="True">
+              <Node name="Areas" expanded="True">
+                <Node name="Identity" expanded="True">
+                  <Node name="Pages" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Cart" expanded="True" />
+                <Node name="Category" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
 </Properties>
