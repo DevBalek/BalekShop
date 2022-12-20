@@ -11,13 +11,13 @@ builder.Services.AddDbContext<ParmisDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("parmisweb"))
     );
 
-/*
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ParmisDbContext>();
 builder.Services.AddControllersWithViews();
-*/
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
