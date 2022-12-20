@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisAuth/ParmisAuth/ParmisAuth.csproj": {}
+    "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth/ParmisAuth.csproj": {}
   },
   "projects": {
-    "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisAuth/ParmisAuth/ParmisAuth.csproj": {
+    "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth/ParmisAuth.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisAuth/ParmisAuth/ParmisAuth.csproj",
+        "projectUniqueName": "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth/ParmisAuth.csproj",
         "projectName": "ParmisAuth",
-        "projectPath": "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisAuth/ParmisAuth/ParmisAuth.csproj",
+        "projectPath": "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth/ParmisAuth.csproj",
         "packagesPath": "/Users/mfbalek/.nuget/packages/",
-        "outputPath": "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisAuth/ParmisAuth/obj/",
+        "outputPath": "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mfbalek/.nuget/NuGet/NuGet.Config"
