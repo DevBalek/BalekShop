@@ -1,0 +1,14 @@
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/bin/Debug/net7.0/ParmisAuth.Data.deps.json
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/bin/Debug/net7.0/ParmisAuth.Data.runtimeconfig.json
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/bin/Debug/net7.0/ParmisAuth.Data.dll
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/bin/Debug/net7.0/ParmisAuth.Data.pdb
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/obj/Debug/net7.0/ParmisAuth.Data.csproj.AssemblyReference.cache
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/obj/Debug/net7.0/ParmisAuth.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/obj/Debug/net7.0/ParmisAuth.Data.AssemblyInfoInputs.cache
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/obj/Debug/net7.0/ParmisAuth.Data.AssemblyInfo.cs
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/obj/Debug/net7.0/ParmisAuth.Data.csproj.CoreCompileInputs.cache
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/obj/Debug/net7.0/ParmisAuth.Data.dll
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/obj/Debug/net7.0/refint/ParmisAuth.Data.dll
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/obj/Debug/net7.0/ParmisAuth.Data.pdb
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/obj/Debug/net7.0/ParmisAuth.Data.genruntimeconfig.cache
+/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/obj/Debug/net7.0/ref/ParmisAuth.Data.dll

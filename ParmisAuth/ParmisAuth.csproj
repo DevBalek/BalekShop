@@ -29,4 +29,9 @@
     <Folder Include="Views\Category\" />
     <Folder Include="Views\Cart\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ParmisAuth.Data\ParmisAuth.Data.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
