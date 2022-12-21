@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/ParmisAuth.Data.csproj": {}
+    "C:\\Users\\mfBalek\\ParmisWeb\\ParmisAuth.Data\\ParmisAuth.Data.csproj": {}
   },
   "projects": {
-    "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/ParmisAuth.Data.csproj": {
+    "C:\\Users\\mfBalek\\ParmisWeb\\ParmisAuth.Data\\ParmisAuth.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/ParmisAuth.Data.csproj",
+        "projectUniqueName": "C:\\Users\\mfBalek\\ParmisWeb\\ParmisAuth.Data\\ParmisAuth.Data.csproj",
         "projectName": "ParmisAuth.Data",
-        "projectPath": "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/ParmisAuth.Data.csproj",
-        "packagesPath": "/Users/mfbalek/.nuget/packages/",
-        "outputPath": "/Users/mfbalek/Documents/software-folders/cs-folder/ParmisWeb/ParmisAuth.Data/obj/",
+        "projectPath": "C:\\Users\\mfBalek\\ParmisWeb\\ParmisAuth.Data\\ParmisAuth.Data.csproj",
+        "packagesPath": "C:\\Users\\mfBalek\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mfBalek\\ParmisWeb\\ParmisAuth.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mfbalek/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\mfBalek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +40,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -69,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
