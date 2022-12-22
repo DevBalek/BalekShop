@@ -1,6 +1,6 @@
-﻿using BalekShop.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using BalekShop.Models;
 
 namespace BalekShop.Controllers
 {

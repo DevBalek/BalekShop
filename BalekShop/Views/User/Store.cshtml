@@ -1,0 +1,22 @@
+﻿@model IEnumerable<BalekShop.Models.Domain.Book>
+@{
+    Layout = "_StoreLayout";
+}
+
+@foreach(var item in Model)
+{
+	<figure class="product-style">
+		<img src="@item.BookImage" alt="Books" class="product-item">
+		<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
+
+		<figcaption>
+			<h3>@item.Title</h3>
+			<p>@item.AuthorName</p>
+			<div class="item-price">12</div>
+		</figcaption>
+	</figure>
+
+}
+
+
+
