@@ -1,0 +1,29 @@
+﻿@using BalekShop.Data;
+@model List<ProductModel>
+@{   
+    
+}
+
+<h1>Phone Controller</h1>
+
+
+<div class="container">
+    <div class="row">
+    
+    @foreach(var i in Model)
+    {
+               
+        <div class="col-sm">              
+            <div class="card" style="width: 18rem;">
+                <img src="@i.ImageSource" class="card-img-top" alt="...">
+                <div class="card-body">
+                            <h5 class="card-title">@i.Name</h5>
+                            <p class="card-text">@i.Description</p>
+                <a href="#" class="btn btn-primary">Add Cart</a>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+
+</div>

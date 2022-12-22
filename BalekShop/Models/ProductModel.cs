@@ -13,6 +13,8 @@ namespace BalekShop.Data
 
         public string Description { get; set; }
 
+        public string ImageSource { get; set; }
+
         [Required]
         public int Price { get; set; }
 
