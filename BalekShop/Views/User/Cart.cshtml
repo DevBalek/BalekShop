@@ -1,5 +1,13 @@
-﻿@{
+﻿@using BalekShop.Models.Domain;
+@model List<BookCart>;
+@{
 	Layout = "_StoreLayout";
+	var totalPrice = 0;
+	foreach (var item in Model)
+	{
+		totalPrice += item.Book.Price * item.Amount;
+	}
+
 }
 
 <div>
@@ -8,6 +16,7 @@
 			<div class="col-md-6">
 				<div class="colored">
 					<h1 class="page-title">Cart</h1>
+					<h4>Total Price = @totalPrice₺</h4>
 				</div>
 			</div>
 		</div>
@@ -20,9 +29,24 @@
 
 			<div class="products-grid grid">
 				
-
-			</div>
-
+				@foreach (var item in Model)
+				{
+					<figure class="product-style">
+						<img src="@item.Book.BookImage" alt="Books" class="product-item">
+					<form asp-action="DeleteBook" asp-route-id="@item.Book.Id">
+						<button type="submit" class="add-to-cart" data-product-tile="add-to-cart">Delete</button>
+					</form>
+						<figcaption>
+							<h3>@item.Book.Title</h3>
+							<p>@item.Book.AuthorName</p>
+							<div class="item-price"> @item.Book.Price x @item.Amount =
+								@(item.Book.Price * item.Amount)₺
+							</div>
+							<div class="item-price">Amount: @item.Amount</div>
+						</figcaption>
+					</figure>
+				}
+			</div>			
 		</div>
 	</div>
 </section>

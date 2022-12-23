@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BalekShop.Models.Domain
 {
@@ -15,11 +16,6 @@ namespace BalekShop.Models.Domain
         public string Email { get; set; }
         [Required]
         public string Adress { get; set; }
-
-        [Required]
-        public int CartId { get; set; }
-
-        [NotMapped]
-        public Cart? Cart { get; set; }
+                
     }
 }

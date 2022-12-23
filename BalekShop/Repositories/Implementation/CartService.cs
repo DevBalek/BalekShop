@@ -47,7 +47,12 @@ namespace BalekShop.Repositories.Implementation
             return context.Cart.Find(id);
         }
 
-        public IEnumerable<Cart> GetAll()
+		public List<Cart> FindByCartsUserId(int id)
+		{
+			return context.Cart.Where(a=>a.UserID==id).ToList();
+		}
+
+		public IEnumerable<Cart> GetAll()
         {
             return context.Cart.ToList();
         }

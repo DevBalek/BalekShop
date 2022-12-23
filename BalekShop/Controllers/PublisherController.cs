@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BalekShop.Models.Domain;
 using BalekShop.Repositories.Abstract;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BalekShop.Controllers
 {
-    public class PublisherController : Controller
+    [Authorize(Roles = "Admin")]
+	public class PublisherController : Controller
     {
         private readonly IPublisherService service;
         public PublisherController(IPublisherService service)

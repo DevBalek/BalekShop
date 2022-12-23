@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BalekShop.Models.Domain;
 using BalekShop.Repositories.Abstract;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BalekShop.Controllers
 {
-    public class AuthorController : Controller
+    [Authorize(Roles = "Admin")]
+	public class AuthorController : Controller
     {
         private readonly IAuthorService service;
         public AuthorController(IAuthorService service)

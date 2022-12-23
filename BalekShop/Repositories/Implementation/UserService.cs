@@ -5,24 +5,16 @@ namespace BalekShop.Repositories.Implementation
 {
     public class UserService : IUserService
     {
-        private readonly DatabaseContext context;
-        public UserService(DatabaseContext context)
+        private readonly DatabaseContext context;        
+		public UserService(DatabaseContext context )
         {
-            this.context = context;
+			this.context = context;
         }
         public bool Add(User model)
         {
             try
-            {
-                model.CartId = model.Id;
+            {                
                 context.User.Add(model);
-                context.SaveChanges();
-
-                var lastUserID = GetAll().Last<User>().Id;
-
-                context.Cart.Add(new Cart { UserID = lastUserID });
-                model.CartId = lastUserID;
-                Update(model);
                 context.SaveChanges();
                 return true;
             }

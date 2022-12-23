@@ -8,6 +8,8 @@ namespace BalekShop.Repositories.Abstract
         bool Update(Cart model);
         bool Delete(int id);
         Cart FindById(int id);
-        IEnumerable<Cart> GetAll();
+        public List<Cart> FindByCartsUserId(int id);
+
+		IEnumerable<Cart> GetAll();
     }
 }

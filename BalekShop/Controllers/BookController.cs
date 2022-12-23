@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace BalekShop.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     public class BookController : Controller
     {
         private readonly IBookService bookService;

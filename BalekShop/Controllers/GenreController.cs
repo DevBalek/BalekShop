@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BalekShop.Models.Domain;
 using BalekShop.Repositories.Abstract;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BalekShop.Controllers
 {
-    public class GenreController : Controller
+    [Authorize(Roles = "Admin")]
+	public class GenreController : Controller
     {
         private readonly IGenreService service;
         public GenreController(IGenreService service)

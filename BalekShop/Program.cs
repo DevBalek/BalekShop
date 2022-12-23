@@ -18,7 +18,8 @@ builder.Services.AddScoped<IPublisherService, PublisherService>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IUserService,UserService>();
-
+builder.Services.AddScoped<IAdminService, AdminService>();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
 {
@@ -49,5 +50,11 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=User}/{action=Store}/{id?}");
+
+app.MapControllerRoute(
+	name: "AddCart",
+	pattern: "{controller=User}/{action=AddCart}/{id?}"
+	); 
+
 
 app.Run();
