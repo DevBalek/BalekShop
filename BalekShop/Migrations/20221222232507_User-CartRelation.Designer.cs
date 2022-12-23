@@ -3,6 +3,7 @@ using BalekShop.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BalekShop.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20221222232507_User-CartRelation")]
+    partial class UserCartRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,6 +93,9 @@ namespace BalekShop.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserID")
+                        .IsUnique();
+
                     b.ToTable("Cart");
                 });
 
@@ -140,9 +145,6 @@ namespace BalekShop.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CartId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -158,6 +160,21 @@ namespace BalekShop.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("BalekShop.Models.Domain.Cart", b =>
+                {
+                    b.HasOne("BalekShop.Models.Domain.User", null)
+                        .WithOne("Cart")
+                        .HasForeignKey("BalekShop.Models.Domain.Cart", "UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BalekShop.Models.Domain.User", b =>
+                {
+                    b.Navigation("Cart")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

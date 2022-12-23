@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "_StoreLayout";
+}
+
+ @if (TempData["msg"] != null)
+            {
+                <div class="form-group">
+                    @TempData["msg"]
+                </div>
+            }
+<a class="btn btn-dark" href="/User/Login">Back</a

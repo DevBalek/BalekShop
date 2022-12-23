@@ -16,6 +16,16 @@ builder.Services.AddScoped<IGenreService, GenreService>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IPublisherService, PublisherService>();
 builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IUserService,UserService>();
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+{
+	options.Cookie.Name = "BalekShop.Auth";
+	options.LoginPath = "/Login/Index";
+	options.AccessDeniedPath = "/Login/Index";
+});
 
 var app = builder.Build();
 
@@ -33,7 +43,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

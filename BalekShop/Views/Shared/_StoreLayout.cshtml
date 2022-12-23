@@ -14,8 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="~/booksaw-template/css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="~/booksaw-template/icomoon/icomoon.css">
 	<link rel="stylesheet" type="text/css" href="~/booksaw-template/css/vendor.css">
-	<link rel="stylesheet" type="text/css" href="~/booksaw-template/style.css">
-
+	<link rel="stylesheet" type="text/css" href="~/booksaw-template/style.css">	
 	<!-- script
 	================================================== -->
 	<script src="~/booksaw-template/js/modernizr.js"></script>
@@ -34,18 +33,17 @@
 						<div class="social-links">
 							<ul>
 								<li>
-									
-										<div class="main-logo">
-											<a href="index.html"><img src="~/booksaw-template/images/main-logo.png" alt="logo"></a>
-										</div>
+									<div class="main-logo">
+										<a href="/User/Store"><img src="~/booksaw-template/images/main-logo.png" alt="logo"></a>
+									</div>
 								</li>								
 							</ul>
 						</div><!--social-links-->
 					</div>
 					<div class="col-md-6">
 						<div class="right-element">
-							<a href="#" class="user-account for-buy"><i class="icon icon-user"></i><span>Account</span></a>
-							<a href="#" class="cart for-buy"><i class="icon icon-clipboard"></i><span>Cart:(0 $)</span></a>
+							<a href="/User/Login" class="user-account for-buy"><i class="icon icon-user"></i><span>Account</span></a>
+							<a href="/User/Cart" class="cart for-buy"><i class="icon icon-clipboard"></i><span>Cart</span></a>
 
 							<div class="action-menu">
 			
@@ -61,112 +59,8 @@
 		</div><!--top-content-->
 	</div><!--header-wrap-->
 
-	<div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="colored">
-						<h1 class="page-title">Store</h1>						
-					</div>
-				</div>
-			</div>
-		</div>
-	</div><!--site-banner-->
-
-	<section class="padding-large">
-		<div class="container">
-			<div class="row">
-
-				<div class="products-grid grid">
-					
-					@RenderBody()
-
-					<figure class="product-style">
-						<img src="images/tab-item1.jpg" alt="Books" class="product-item">
-						<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
-						<figcaption>
-							<h3>Portrait photography</h3>
-							<p>Adam Silber</p>
-							<div class="item-price">$ 40.00</div>
-						</figcaption>
-					</figure>
-
-					<figure class="product-style">
-						<img src="images/tab-item2.jpg" alt="Books" class="product-item">
-						<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
-						<figcaption>
-							<h3>Once upon a time</h3>
-							<p>Klien Marry</p>
-							<div class="item-price">$ 35.00</div>
-						</figcaption>
-					</figure>
-
-					<figure class="product-style">
-						<img src="images/tab-item3.jpg" alt="Books" class="product-item">
-						<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
-						<figcaption>
-							<h3>Tips of simple lifestyle</h3>
-							<p>Bratt Smith</p>
-							<div class="item-price">$ 40.00</div>
-						</figcaption>
-					</figure>
-
-					<figure class="product-style">
-						<img src="images/tab-item4.jpg" alt="Books" class="product-item">
-						<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
-						<figcaption>
-							<h3>Just felt from outside</h3>
-							<p>Nicole Wilson</p>
-							<div class="item-price">$ 40.00</div>
-						</figcaption>
-					</figure>
-
-					<figure class="product-style">
-						<img src="images/tab-item5.jpg" alt="Books" class="product-item">
-						<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
-						<figcaption>
-							<h3>Peaceful Enlightment</h3>
-							<p>Marmik Lama</p>
-							<div class="item-price">$ 40.00</div>
-						</figcaption>
-					</figure>
-
-					<figure class="product-style">
-						<img src="images/tab-item6.jpg" alt="Books" class="product-item">
-						<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
-						<figcaption>
-							<h3>Great travel at desert</h3>
-							<p>Sanchit Howdy</p>
-							<div class="item-price">$ 40.00</div>
-						</figcaption>
-					</figure>
-
-					<figure class="product-style">
-						<img src="images/tab-item7.jpg" alt="Books" class="product-item">
-						<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
-						<figcaption>
-							<h3>Life among the pirates</h3>
-							<p>Armor Ramsey</p>
-							<div class="item-price">$ 40.00</div>
-						</figcaption>
-					</figure>
-
-					<figure class="product-style">
-						<img src="images/tab-item8.jpg" alt="Books" class="product-item">
-						<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
-						<figcaption>
-							<h3>Simple way of piece life</h3>
-							<p>Armor Ramsey</p>
-							<div class="item-price">$ 40.00</div>
-						</figcaption>
-					</figure>
-
-				</div>
-
-			</div>
-		</div>
-	</section>
-
+	
+	@RenderBody()
 
 	<footer id="footer">
 		<div class="container">
@@ -289,7 +183,7 @@
 						<div class="row">
 
 							<div class="col-md-6">
-								<p>© 2022 All rights reserved. Free HTML Template by <a href="https://www.templatesjungle.com/" target="_blank">TemplatesJungle</a></p>
+								<p>© 2022 Tüm Hakları Saklıdır - BalekShop </p>
 							</div>
 
 							<div class="col-md-6">

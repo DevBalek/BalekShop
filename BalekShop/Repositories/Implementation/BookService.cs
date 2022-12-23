@@ -46,14 +46,14 @@ namespace BalekShop.Repositories.Implementation
             return context.Book.Find(id);
         }
 
-        public IEnumerable<Book> GetAll()
+        public IEnumerable<Book> GetAll() 
         {
             var data = (from book in context.Book
                         join author in context.Author
                         on book.AuthorId equals author.Id
                         join publisher in context.Publisher on book.PubhlisherId equals publisher.Id
                         join genre in context.Genre on book.GenreId equals genre.Id
-                        select new Book
+                        select new Book 
                         {
                             Id = book.Id,
                             AuthorId = book.AuthorId,
@@ -62,6 +62,7 @@ namespace BalekShop.Repositories.Implementation
                             PubhlisherId = book.PubhlisherId,
                             Title = book.Title,
                             TotalPages = book.TotalPages,
+                            Price = book.Price,
                             GenreName = genre.Name,
                             AuthorName = author.AuthorName,
                             BookImage = book.BookImage,

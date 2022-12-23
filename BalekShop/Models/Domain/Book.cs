@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BalekShop.Models.Domain
 {
@@ -17,6 +19,10 @@ namespace BalekShop.Models.Domain
         public string Isbn { get; set; }
         [Required]
         public int TotalPages { get; set; }
+
+        [DefaultValue(1)]
+        [AllowNull]
+        public int Price { get; set; }
 
         [Required]
         public int AuthorId { get; set; }
