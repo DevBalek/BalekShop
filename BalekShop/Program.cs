@@ -23,8 +23,8 @@ builder.Services.AddScoped<IUserService,UserService>();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
 {
 	options.Cookie.Name = "BalekShop.Auth";
-	options.LoginPath = "/Login/Index";
-	options.AccessDeniedPath = "/Login/Index";
+	options.LoginPath = "/User/Login";
+	options.AccessDeniedPath = "/User/Login";   
 });
 
 var app = builder.Build();

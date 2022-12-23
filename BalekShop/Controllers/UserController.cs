@@ -1,8 +1,11 @@
 ﻿using BalekShop.Models.Domain;
 using BalekShop.Repositories.Abstract;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Security.Claims;
 
 namespace BalekShop.Controllers
 {
@@ -38,18 +41,48 @@ namespace BalekShop.Controllers
 			return View();
 		}
 
-		[HttpGet]
 		public IActionResult Login()
-		{
-			return View();
+		{            
+            return View();
 		}
 
 		[HttpPost]
-		public IActionResult Login(User user)
+		public async Task<IActionResult> Login(ValidateUser model)
 		{
+            if (!ModelState.IsValid)
+            {
+                TempData["msg"] = "Unvalid attempt";
+                return View(model);
+            }
+			User? result = null;
+            try
+			{
+				result = userService.GetAll().Where(a => a.Email == model.Email).Where(b => b.Password == model.Password).First();
+			}
+			catch {
+                TempData["msg"] = "Wrong Email or Password";
+                return View(model);
+            }
+            if (result != null)
+            {
+                TempData["msg"] = "Welcome " +result.UserName + ",\nLogin Successfully";
+				var claims = new List<Claim>
+				{
+					new Claim(ClaimTypes.Name, result.UserName),
+					new Claim(ClaimTypes.Role, "User")
+                };
+				var claimsIdentity = new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
+				var authProperties = new AuthenticationProperties();
 
-			return View();
-		}
+
+				await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+                
+				return RedirectToAction(nameof(Login));
+            }
+
+            TempData["msg"] = "Error has occured on server side,\nResult: " + result;
+            return View(model);
+        }
 
 		[HttpPost]
 		public IActionResult Signup(User model)
@@ -68,10 +101,8 @@ namespace BalekShop.Controllers
             return View(model);
         }
 
-		[HttpGet]
 		public IActionResult Signup()
-		{
-            TempData["msg"] = "Get";
+		{         
             return View();
 		}
 	}

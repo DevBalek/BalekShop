@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using BalekShop.Models.Domain;
 using BalekShop.Repositories.Abstract;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BalekShop.Controllers
 {
+    [Authorize]
     public class BookController : Controller
     {
         private readonly IBookService bookService;
