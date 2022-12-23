@@ -15,5 +15,13 @@ namespace BalekShop.Models.Domain
         public DbSet<Book> Book { get; set; }
         public DbSet<Cart> Cart{ get; set; }
         public DbSet<User> User { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasIndex(b => b.Email).IsUnique();
+            modelBuilder.Entity<User>().HasIndex(b => b.UserName).IsUnique();
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

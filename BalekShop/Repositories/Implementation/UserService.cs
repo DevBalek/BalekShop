@@ -14,11 +14,14 @@ namespace BalekShop.Repositories.Implementation
         {
             try
             {
+                model.CartId = model.Id;
                 context.User.Add(model);
                 context.SaveChanges();
-                User lastUser = GetAll().Last<User>();
-                context.Cart.Add(new Cart { UserID = lastUser.Id });
-                model.CartId = lastUser.Id;
+
+                var lastUserID = GetAll().Last<User>().Id;
+
+                context.Cart.Add(new Cart { UserID = lastUserID });
+                model.CartId = lastUserID;
                 Update(model);
                 context.SaveChanges();
                 return true;
@@ -53,14 +56,11 @@ namespace BalekShop.Repositories.Implementation
 
         public IEnumerable<User> GetAll()
         {
-            var data = (from user in context.User
-                        join cart in context.Cart
-                        on user.CartId equals cart.UserID
+            var data = (from user in context.User                        
                         select new User
                         {
                             Id = user.Id,
-                            UserName = user.UserName,
-                            Cart = cart,
+                            UserName = user.UserName,                            
                             Adress = user.Adress,
                             Email = user.Email,
                             Password = user.Password,                            
