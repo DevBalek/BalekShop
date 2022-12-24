@@ -1,5 +1,5 @@
 ﻿@using BalekShop.Repositories.Language;
-@model BalekShop.Models.Domain.ValidateUser
+@model ValidateUser
 @{
     Layout = "_StoreLayout";
 }
@@ -28,9 +28,9 @@
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>                  
                 <div class="form-group">                   
-                    <input type="submit" class="btnSubmit" value="Login" />                    
+                    <input type="submit" class="btnSubmit" value="@language.Getkey("login")" />
                 </div>   
-                <a href="/User/Signup">@language.Getkey("signup")</a>
+                <a href="/User/Signup">@language.Getkey("dont-have-account")</a>
             </form>                      
         </div>       
     </div>

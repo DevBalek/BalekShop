@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using BalekShop.Models.Domain;
 using BalekShop.Repositories.Abstract;
 using Microsoft.AspNetCore.Authorization;
+using BalekShop.Models;
+using BalekShop.Repositories.Language;
 
 namespace BalekShop.Controllers
 {
@@ -12,7 +13,7 @@ namespace BalekShop.Controllers
         private readonly IBookService bookService;
         private readonly IAuthorService authorService;
         private readonly IGenreService genreService;
-        private readonly IPublisherService publisherService;
+        private readonly IPublisherService publisherService;   
         public BookController(IBookService bookService, IGenreService genreService, IPublisherService publisherService,IAuthorService authorService)
         {
             this.bookService = bookService;
@@ -42,10 +43,10 @@ namespace BalekShop.Controllers
             var result = bookService.Add(model);
             if (result)
             {
-                TempData["msg"] = "Added Successfully";
+                TempData["msg"] = "successful";
                 return RedirectToAction(nameof(Add));
             }
-            TempData["msg"] = "Error has occured on server side";
+            TempData["msg"] = "error-server";
             return View(model);
         }
 
@@ -74,7 +75,7 @@ namespace BalekShop.Controllers
             {
                 return RedirectToAction("Get");
             }
-            TempData["msg"] = "Error has occured on server side";
+            TempData["msg"] = "error-server";
             return View(model);
         }
 

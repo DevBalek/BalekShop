@@ -1,9 +1,9 @@
-﻿using BalekShop.Models.Domain;
+﻿using BalekShop.Models;
 using BalekShop.Repositories.Abstract;
 
 namespace BalekShop.Repositories.Implementation
 {
-	public class AdminService : IAdminService
+    public class AdminService : IAdminService
 	{
 		private readonly DatabaseContext context;
 		public AdminService(DatabaseContext context)

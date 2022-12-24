@@ -118,159 +118,159 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="a-lot-item" xml:space="preserve">
-    <value>You have this book, Amount increased</value>
+    <value>이 책이 있습니다. 금액이 증가했습니다.</value>
   </data>
   <data name="account" xml:space="preserve">
-    <value>Account</value>
+    <value>계정</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>Add</value>
+    <value>추가하다</value>
   </data>
   <data name="add-to-cart" xml:space="preserve">
-    <value>Add to Cart</value>
+    <value>장바구니에 담기</value>
   </data>
   <data name="admin" xml:space="preserve">
-    <value>Admin</value>
+    <value>관리자</value>
   </data>
   <data name="admin-panel" xml:space="preserve">
-    <value>Admin Panel</value>
+    <value>관리자 패널</value>
   </data>
   <data name="adress" xml:space="preserve">
-    <value>Adress</value>
+    <value>주소</value>
   </data>
   <data name="all-rights-reserved" xml:space="preserve">
-    <value>All Rights Reserved</value>
+    <value>판권 소유</value>
   </data>
   <data name="already-have-account" xml:space="preserve">
-    <value>Already have an account?</value>
+    <value>이미 계정이 있습니까?</value>
   </data>
   <data name="already-using" xml:space="preserve">
-    <value>Username or Email already using.</value>
+    <value>이미 사용 중인 사용자 이름 또는 이메일입니다.</value>
   </data>
   <data name="amount" xml:space="preserve">
-    <value>Amount</value>
+    <value>양</value>
   </data>
   <data name="author" xml:space="preserve">
-    <value>Author</value>
+    <value>작가</value>
   </data>
   <data name="back-to-store" xml:space="preserve">
     <value>BackToStore</value>
   </data>
   <data name="book" xml:space="preserve">
-    <value>Book</value>
+    <value>도서</value>
   </data>
   <data name="cart" xml:space="preserve">
-    <value>Cart</value>
+    <value>카트</value>
   </data>
   <data name="delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>삭제</value>
   </data>
   <data name="dont-have-account" xml:space="preserve">
-    <value>Don't you have an account?</value>
+    <value>계정이 없습니까?</value>
   </data>
   <data name="edit" xml:space="preserve">
-    <value>Edit</value>
+    <value>편집하다</value>
   </data>
   <data name="email" xml:space="preserve">
-    <value>Email</value>
+    <value>이메일</value>
   </data>
   <data name="error-server" xml:space="preserve">
-    <value>Error has occured on server side</value>
+    <value>서버 측에서 오류가 발생했습니다</value>
   </data>
   <data name="first-item" xml:space="preserve">
-    <value>First book added your cart.</value>
+    <value>첫 번째 책이 장바구니에 추가되었습니다.</value>
   </data>
   <data name="genre" xml:space="preserve">
-    <value>Genre</value>
+    <value>장르</value>
   </data>
   <data name="image" xml:space="preserve">
-    <value>Image</value>
+    <value>영상</value>
   </data>
   <data name="list" xml:space="preserve">
-    <value>List</value>
+    <value>목록</value>
   </data>
   <data name="login" xml:space="preserve">
-    <value>Login</value>
+    <value>로그인</value>
   </data>
   <data name="login-fail" xml:space="preserve">
-    <value>Login Failed</value>
+    <value>로그인 실패</value>
   </data>
   <data name="login-success" xml:space="preserve">
-    <value>Login success</value>
+    <value>로그인 성공</value>
   </data>
   <data name="logout" xml:space="preserve">
-    <value>Logout</value>
+    <value>로그 아웃</value>
   </data>
   <data name="logout-fail" xml:space="preserve">
-    <value>Logout Failed</value>
+    <value>로그아웃 실패</value>
   </data>
   <data name="logout-success" xml:space="preserve">
-    <value>Logout Success</value>
+    <value>로그아웃 성공</value>
   </data>
   <data name="name" xml:space="preserve">
-    <value>Name</value>
+    <value>이름</value>
   </data>
   <data name="new" xml:space="preserve">
-    <value>New</value>
+    <value>새로운</value>
   </data>
   <data name="order-and-pay" xml:space="preserve">
-    <value>Order and Pay</value>
+    <value>주문 및 결제</value>
   </data>
   <data name="other-item" xml:space="preserve">
-    <value>Book added your cart.</value>
+    <value>책이 장바구니에 추가되었습니다.</value>
   </data>
   <data name="pages" xml:space="preserve">
-    <value>Pages</value>
+    <value>페이지</value>
   </data>
   <data name="password" xml:space="preserve">
-    <value>Password</value>
+    <value>비밀번호</value>
   </data>
   <data name="price" xml:space="preserve">
-    <value>Price</value>
+    <value>가격</value>
   </data>
   <data name="publisher" xml:space="preserve">
-    <value>Publisher</value>
+    <value>발행자</value>
   </data>
   <data name="save" xml:space="preserve">
-    <value>Save</value>
+    <value>구하다</value>
   </data>
   <data name="select" xml:space="preserve">
-    <value>Select</value>
+    <value>선택하다</value>
   </data>
   <data name="signup" xml:space="preserve">
-    <value>Signup</value>
+    <value>가입하기</value>
   </data>
   <data name="signup-success" xml:space="preserve">
-    <value>Kayıt Başarılı</value>
+    <value>카이트 바살을르</value>
   </data>
   <data name="successful" xml:space="preserve">
-    <value>Successful</value>
+    <value>성공적인</value>
   </data>
   <data name="title" xml:space="preserve">
-    <value>Title</value>
+    <value>제목</value>
   </data>
   <data name="total-pages" xml:space="preserve">
-    <value>Total Pages</value>
+    <value>총 페이지</value>
   </data>
   <data name="total-price" xml:space="preserve">
-    <value>Total Price</value>
+    <value>총 가격</value>
   </data>
   <data name="update" xml:space="preserve">
-    <value>Update</value>
+    <value>업데이트</value>
   </data>
   <data name="update-profile" xml:space="preserve">
-    <value>Update Profile</value>
+    <value>프로필 업데이트</value>
   </data>
   <data name="user" xml:space="preserve">
-    <value>User</value>
+    <value>사용자</value>
   </data>
   <data name="username" xml:space="preserve">
-    <value>Username</value>
+    <value>사용자 이름</value>
   </data>
   <data name="welcome" xml:space="preserve">
-    <value>Welcome</value>
+    <value>어서 오십시오</value>
   </data>
   <data name="wrong-email-or-pass" xml:space="preserve">
-    <value>Wrong Email or Password</value>
+    <value>잘못된 이메일 또는 비밀번호</value>
   </data>
 </root>

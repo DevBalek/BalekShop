@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BalekShop.Models.Domain
+namespace BalekShop.Models
 {
-    public class Author
+    public class Genre
     {
         public int Id { get; set; }
         [Required]
-        public string AuthorName { get; set; }
+        public string Name { get; set; }
     }
 }

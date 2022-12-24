@@ -1,9 +1,25 @@
 ﻿@using BalekShop.Repositories.Language;
-@model IEnumerable<BalekShop.Models.Domain.Book>
+@model IEnumerable<Book>
 @inject LanguageService language;
 @{
 	Layout = "_StoreLayout";
 	var username = ViewBag.username;
+	string? message = null;
+	string? welcomeMessage = null;
+
+	if (TempData["msg"] != null)
+	{
+		if (TempData["msg"]?.ToString() == "welcome")
+		{
+			if (User.IsInRole("Admin"))
+			{
+				welcomeMessage += " ("+language.Getkey("admin")+") " ;				
+			}
+
+			welcomeMessage += User.Identity?.Name;
+		}
+		message = TempData["msg"]?.ToString();
+	}
 }
 
 <div>
@@ -11,9 +27,9 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="colored">					
-					@if (TempData["msg"] != null)
+					@if (message != null)
 					{
-						<h4>System Message: @TempData["msg"] </h4>												
+						<h4>@language.Getkey(message) @welcomeMessage</h4>
 					}
 				</div>
 			</div>

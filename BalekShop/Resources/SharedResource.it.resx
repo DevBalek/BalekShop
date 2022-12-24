@@ -118,159 +118,159 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="a-lot-item" xml:space="preserve">
-    <value>You have this book, Amount increased</value>
+    <value>Hai questo libro, Importo aumentato</value>
   </data>
   <data name="account" xml:space="preserve">
     <value>Account</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>Add</value>
+    <value>Aggiungere</value>
   </data>
   <data name="add-to-cart" xml:space="preserve">
-    <value>Add to Cart</value>
+    <value>Aggiungi al carrello</value>
   </data>
   <data name="admin" xml:space="preserve">
-    <value>Admin</value>
+    <value>Amministratore</value>
   </data>
   <data name="admin-panel" xml:space="preserve">
-    <value>Admin Panel</value>
+    <value>Pannello di Amministrazione</value>
   </data>
   <data name="adress" xml:space="preserve">
-    <value>Adress</value>
+    <value>Un abito</value>
   </data>
   <data name="all-rights-reserved" xml:space="preserve">
-    <value>All Rights Reserved</value>
+    <value>Tutti i diritti riservati</value>
   </data>
   <data name="already-have-account" xml:space="preserve">
-    <value>Already have an account?</value>
+    <value>Hai già un account?</value>
   </data>
   <data name="already-using" xml:space="preserve">
-    <value>Username or Email already using.</value>
+    <value>Nome utente o Email già in uso.</value>
   </data>
   <data name="amount" xml:space="preserve">
-    <value>Amount</value>
+    <value>Importo</value>
   </data>
   <data name="author" xml:space="preserve">
-    <value>Author</value>
+    <value>Autore</value>
   </data>
   <data name="back-to-store" xml:space="preserve">
-    <value>BackToStore</value>
+    <value>Torna al negozio</value>
   </data>
   <data name="book" xml:space="preserve">
-    <value>Book</value>
+    <value>Prenotare</value>
   </data>
   <data name="cart" xml:space="preserve">
-    <value>Cart</value>
+    <value>Carrello</value>
   </data>
   <data name="delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>Elimina</value>
   </data>
   <data name="dont-have-account" xml:space="preserve">
-    <value>Don't you have an account?</value>
+    <value>Non hai un account?</value>
   </data>
   <data name="edit" xml:space="preserve">
-    <value>Edit</value>
+    <value>Modificare</value>
   </data>
   <data name="email" xml:space="preserve">
-    <value>Email</value>
+    <value>E-mail</value>
   </data>
   <data name="error-server" xml:space="preserve">
-    <value>Error has occured on server side</value>
+    <value>Si è verificato un errore sul lato server</value>
   </data>
   <data name="first-item" xml:space="preserve">
-    <value>First book added your cart.</value>
+    <value>Primo libro aggiunto al carrello.</value>
   </data>
   <data name="genre" xml:space="preserve">
-    <value>Genre</value>
+    <value>Genere</value>
   </data>
   <data name="image" xml:space="preserve">
-    <value>Image</value>
+    <value>Immagine</value>
   </data>
   <data name="list" xml:space="preserve">
-    <value>List</value>
+    <value>Elenco</value>
   </data>
   <data name="login" xml:space="preserve">
     <value>Login</value>
   </data>
   <data name="login-fail" xml:space="preserve">
-    <value>Login Failed</value>
+    <value>Accesso non riuscito</value>
   </data>
   <data name="login-success" xml:space="preserve">
-    <value>Login success</value>
+    <value>Accesso riuscito</value>
   </data>
   <data name="logout" xml:space="preserve">
-    <value>Logout</value>
+    <value>Disconnettersi</value>
   </data>
   <data name="logout-fail" xml:space="preserve">
-    <value>Logout Failed</value>
+    <value>Disconnessione non riuscita</value>
   </data>
   <data name="logout-success" xml:space="preserve">
-    <value>Logout Success</value>
+    <value>Disconnessione riuscita</value>
   </data>
   <data name="name" xml:space="preserve">
-    <value>Name</value>
+    <value>Nome</value>
   </data>
   <data name="new" xml:space="preserve">
-    <value>New</value>
+    <value>Nuovo</value>
   </data>
   <data name="order-and-pay" xml:space="preserve">
-    <value>Order and Pay</value>
+    <value>Ordina e paga</value>
   </data>
   <data name="other-item" xml:space="preserve">
-    <value>Book added your cart.</value>
+    <value>Il libro ha aggiunto il tuo carrello.</value>
   </data>
   <data name="pages" xml:space="preserve">
-    <value>Pages</value>
+    <value>Pagine</value>
   </data>
   <data name="password" xml:space="preserve">
-    <value>Password</value>
+    <value>Parola d'ordine</value>
   </data>
   <data name="price" xml:space="preserve">
-    <value>Price</value>
+    <value>Prezzo</value>
   </data>
   <data name="publisher" xml:space="preserve">
-    <value>Publisher</value>
+    <value>Editore</value>
   </data>
   <data name="save" xml:space="preserve">
-    <value>Save</value>
+    <value>Salva</value>
   </data>
   <data name="select" xml:space="preserve">
-    <value>Select</value>
+    <value>Selezionare</value>
   </data>
   <data name="signup" xml:space="preserve">
-    <value>Signup</value>
+    <value>Iscriviti</value>
   </data>
   <data name="signup-success" xml:space="preserve">
     <value>Kayıt Başarılı</value>
   </data>
   <data name="successful" xml:space="preserve">
-    <value>Successful</value>
+    <value>Riuscito</value>
   </data>
   <data name="title" xml:space="preserve">
-    <value>Title</value>
+    <value>Titolo</value>
   </data>
   <data name="total-pages" xml:space="preserve">
-    <value>Total Pages</value>
+    <value>Pagine totali</value>
   </data>
   <data name="total-price" xml:space="preserve">
-    <value>Total Price</value>
+    <value>Prezzo totale</value>
   </data>
   <data name="update" xml:space="preserve">
-    <value>Update</value>
+    <value>Aggiornare</value>
   </data>
   <data name="update-profile" xml:space="preserve">
-    <value>Update Profile</value>
+    <value>Aggiorna il profilo</value>
   </data>
   <data name="user" xml:space="preserve">
-    <value>User</value>
+    <value>Utente</value>
   </data>
   <data name="username" xml:space="preserve">
-    <value>Username</value>
+    <value>Nome utente</value>
   </data>
   <data name="welcome" xml:space="preserve">
-    <value>Welcome</value>
+    <value>benvenuto</value>
   </data>
   <data name="wrong-email-or-pass" xml:space="preserve">
-    <value>Wrong Email or Password</value>
+    <value>Email o password errate</value>
   </data>
 </root>

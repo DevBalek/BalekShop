@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using BalekShop.Models.Domain;
 using BalekShop.Repositories.Abstract;
 using BalekShop.Repositories.Implementation;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -8,6 +7,7 @@ using Microsoft.AspNetCore.Localization;
 using System.Globalization;
 using System.Reflection;
 using Microsoft.Extensions.Options;
+using BalekShop.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,9 +58,16 @@ builder.Services.Configure<RequestLocalizationOptions>(
     {
         var supportedCultures = new List<CultureInfo>
             {
-                            new CultureInfo("en-US"),
-                            new CultureInfo("tr-TR"),                            
-            };
+							new CultureInfo("ar"),
+							new CultureInfo("en-US"),                            
+                            new CultureInfo("es"),
+                            new CultureInfo("ru"),
+                            new CultureInfo("ko"),
+                            new CultureInfo("ja"),
+                            new CultureInfo("fr"),
+							new CultureInfo("tr-TR")
+
+			};
 
         options.DefaultRequestCulture = new RequestCulture(culture: "tr-TR", uiCulture: "tr-TR");
 
@@ -90,7 +97,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 //LANGUAGE
-var supportedCultures = new[] { "en-US", "tr-TR"};
+var supportedCultures = new[] { "en-US", "tr-TR","ar","es","fr","it","ja","ko","ru"};
 
 var localizationOptions = new RequestLocalizationOptions()
     .SetDefaultCulture(supportedCultures[1])

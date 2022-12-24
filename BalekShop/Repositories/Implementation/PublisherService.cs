@@ -1,4 +1,4 @@
-﻿using BalekShop.Models.Domain;
+﻿using BalekShop.Models;
 using BalekShop.Repositories.Abstract;
 
 namespace BalekShop.Repositories.Implementation

@@ -1,65 +1,68 @@
-﻿@model BalekShop.Models.Domain.Book
+﻿@model Book
 @{
 }
+@using BalekShop.Repositories.Language;
+@inject LanguageService language;
+
 
 <div class="container pt-5">
     <div class="row">
         <div class="col-md-6">
-            <h3>Update Book</h3>
+            <h3>@language.Getkey("update") @language.Getkey("book")</h3>
             <form asp-action="Update" method="post">
                 <input type="hidden" class="form-control" asp-for="Id" />
 
                 <div class="form-group">
-                    <label asp-for="Title">Title *</label>
+                    <label asp-for="Title">@language.Getkey("title") *</label>
                     <input type="text" class="form-control" asp-for="Title" />
                     <span asp-validation-for="Title" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Price">Price *</label>
+                    <label asp-for="Price">@language.Getkey("price") *</label>
                     <input type="number" class="form-control" asp-for="Price" />
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="BookImage">Book Image *</label>
+                    <label asp-for="BookImage">@language.Getkey("book") @language.Getkey("image") *</label>
                     <input type="text" class="form-control" asp-for="BookImage" />
                     <span asp-validation-for="BookImage" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="GenreId">Genre *</label>
+                    <label asp-for="GenreId">@language.Getkey("genre") *</label>
                     <select asp-for="GenreId" asp-items="Model.GenreList" class="form-control">
-                        <option value="">--select--</option>
+                        <option value="">@language.Getkey("select")</option>
                     </select>
                     <span asp-validation-for="GenreId" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Isbn">Isbn *</label>
+                    <label asp-for="Isbn">ISBN *</label>
                     <input type="text" class="form-control" asp-for="Isbn" />
                     <span asp-validation-for="Isbn" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="TotalPages">Total Pages *</label>
+                    <label asp-for="TotalPages">@language.Getkey("total-pages") *</label>
                     <input type="number" class="form-control" asp-for="TotalPages" />
                     <span asp-validation-for="TotalPages" class="text-danger"></span>
                 </div>
 
 
                 <div class="form-group">
-                    <label asp-for="AuthorId">Author *</label>
+                    <label asp-for="AuthorId">@language.Getkey("author") *</label>
                     <select asp-for="AuthorId" asp-items="Model.AuthorList" class="form-control">
-                        <option value="">--select--</option>
+                        <option value="">@language.Getkey("select")</option>
                     </select>
                     <span asp-validation-for="AuthorId" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Title">Publisher *</label>
+                    <label asp-for="Title">@language.Getkey("publisher") *</label>
                     <select asp-for="PubhlisherId" asp-items="Model.PublisherList" class="form-control">
-                        <option value="">--select--</option>
+                        <option value="">@language.Getkey("select")</option>
                     </select>
                     <span asp-validation-for="PubhlisherId" class="text-danger"></span>
                 </div>
@@ -71,8 +74,8 @@
                     </div>
                 }
                 <div class="form-group pt-3">
-                    <button type="submit" class="btn btn-outline-success"><i class="bi bi-cloud-arrow-up-fill"></i> Save</button>
-                    <a href="/Book/Get" class="btn btn-primary"> <i class="bi bi-card-list"></i> List</a>
+                    <a href="/Book/Get" class="btn btn-primary"> <i class="bi bi-card-list"></i> @language.Getkey("list")</a>
+                    <button type="submit" class="btn btn-outline-success"><i class="bi bi-cloud-arrow-up-fill"></i> @language.Getkey("save")</button>
                 </div>
 
             </form>

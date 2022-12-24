@@ -1,8 +1,8 @@
-﻿using BalekShop.Models.Domain;
+﻿using BalekShop.Models;
 
 namespace BalekShop.Repositories.Abstract
 {
-	public interface IAdminService
+    public interface IAdminService
 	{
 		bool Add(Admin model);
 		bool Update(Admin model);

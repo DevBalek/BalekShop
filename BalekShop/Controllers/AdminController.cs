@@ -1,16 +1,18 @@
-﻿using BalekShop.Models.Domain;
+﻿using BalekShop.Models;
 using BalekShop.Repositories.Abstract;
+using BalekShop.Repositories.Language;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BalekShop.Controllers
 {
-	public class AdminController : Controller
+    public class AdminController : Controller
 	{
         private readonly IAdminService service;
+      
 
         public AdminController(IAdminService service)
         {
-            this.service = service;
+            this.service = service;            
         }
 
         public IActionResult Index()
@@ -28,10 +30,10 @@ namespace BalekShop.Controllers
             var result = service.Add(model);
             if (result)
             {
-                TempData["msg"] = "Added Successfully";
+                TempData["msg"] = "successful";
                 return RedirectToAction(nameof(Add));
             }
-            TempData["msg"] = "Error has occured on server side";
+            TempData["msg"] = "error-server";
             return View(model);
         }
 
@@ -53,7 +55,7 @@ namespace BalekShop.Controllers
             {
                 return RedirectToAction("Get");
             }
-            TempData["msg"] = "Error has occured on server side";
+            TempData["msg"] = "error-server";
             return View(model);
         }
         public IActionResult Update(int id)

@@ -1,10 +1,13 @@
-﻿using BalekShop.Models.Domain;
+﻿using BalekShop.Models;
 using BalekShop.Repositories.Abstract;
+using BalekShop.Repositories.Language;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Localization;
+using System.Reflection;
 using System.Security.Claims;
 
 namespace BalekShop.Controllers
@@ -21,7 +24,7 @@ namespace BalekShop.Controllers
 		private readonly ICartService cartService;
         private readonly IAdminService adminService;
         private IHttpContextAccessor httpContextAccessor;
-			
+
 		public UserController(IBookService bookService, IGenreService genreService, IPublisherService publisherService, IAuthorService authorService,IUserService userService,ICartService cartService, IAdminService adminService, IHttpContextAccessor httpContextAccessor)
 		{
 			this.bookService = bookService;
@@ -29,11 +32,12 @@ namespace BalekShop.Controllers
 			this.publisherService = publisherService;
 			this.authorService = authorService;
 			this.userService = userService;
-			this.cartService = cartService;			
+			this.cartService = cartService;
 			this.httpContextAccessor = httpContextAccessor;
             this.adminService = adminService;
-
-        }
+			
+			
+		}
 
 		[HttpGet]
 		public IActionResult Store()
@@ -105,7 +109,7 @@ namespace BalekShop.Controllers
 
 				if (myCart.Count == 0)
 				{
-					TempData["msg"] = "First Item";
+					TempData["msg"] = "first-item";
 					cartService.Add(new Cart { UserID = userID, Amount = 1,BookID = id });
 				}
 				else
@@ -114,7 +118,7 @@ namespace BalekShop.Controllers
 
 					if (isBookExist)
 					{
-						TempData["msg"] = "You have this book, Amount increased";
+						TempData["msg"] = "a-lot-item";
 						Cart cart = myCart!.Where(a => a.BookID == id).First();
 						cart.Amount = cart.Amount + 1;
 						cartService.Update(cart);
@@ -122,7 +126,7 @@ namespace BalekShop.Controllers
 					}
 					else
 					{
-						TempData["msg"] = "Added your shop cart";
+						TempData["msg"] = "other-item";
 						cartService.Add(new Cart { UserID = userID, Amount = 1, BookID = id });
 					}
 				}
@@ -148,8 +152,9 @@ namespace BalekShop.Controllers
 		public async Task<IActionResult> Logout()
 		{
 			await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            TempData["msg"] = "Logout Succesfull";
-            return RedirectToAction(nameof(Store));
+            TempData["msg"] = "logout-success";
+
+			return RedirectToAction(nameof(Store));
 		}
 
 		[HttpPost]
@@ -169,19 +174,19 @@ namespace BalekShop.Controllers
 
 				if (await AdminLoginAttempt(model))
 				{
-                    TempData["msg"] = "Login Succesfull, Welcome Home Admin";
+                    TempData["msg"] = "welcome";
                     return RedirectToAction(nameof(Store));
                 }
 				else
 				{
-                    TempData["msg"] = "Wrong Email or Password";
+                    TempData["msg"] = "wrong-email-or-pass";
                     return View(model);
                 }
                 
             }
             if (result != null)
             {
-                TempData["msg"] = "Welcome " +result.UserName + ",\nLogin Successfully";
+                TempData["msg"] = "welcome";
 				var claims = new List<Claim>
 				{
 					new Claim(ClaimTypes.Name, result.UserName),
@@ -197,8 +202,8 @@ namespace BalekShop.Controllers
 				return RedirectToAction(nameof(Store));
             }
 
-            TempData["msg"] = "Error has occured on server side,\nResult: " + result;
-            return View(model);
+            TempData["msg"] = "error-server";
+			return View(model);
         }
 
 		[HttpPost]
@@ -211,11 +216,11 @@ namespace BalekShop.Controllers
             var result = userService.Add(model);
             if (result)
             {
-                TempData["msg"] = "Signup Successfully";
-                return RedirectToAction(nameof(Login));
+                TempData["msg"] = "signup-success";
+				return RedirectToAction(nameof(Login));
             }
-            TempData["msg"] = "Username or Email already using.";
-            return View(model);
+            TempData["msg"] = "already-using";
+			return View(model);
         }
 
 		public IActionResult Signup()
@@ -248,7 +253,8 @@ namespace BalekShop.Controllers
             {
 				return false;
             }
-        }
+			return false;
+		}
 
 		[Authorize(Roles ="User")]
 		public IActionResult Account()
@@ -285,7 +291,7 @@ namespace BalekShop.Controllers
 			{
 				return RedirectToAction(nameof(Store));
 			}
-			TempData["msg"] = "Error has occured on server side";
+			TempData["msg"] = "error-server";
 			return View(model);
 		}
 
@@ -316,11 +322,11 @@ namespace BalekShop.Controllers
             var result = userService.Add(model);
             if (result)
             {
-                TempData["msg"] = "Added Successfully";
-                return RedirectToAction(nameof(Add));
+                TempData["msg"] = "success";
+				return RedirectToAction(nameof(Add));
             }
-            TempData["msg"] = "Error has occured on server side";
-            return View(model);
+            TempData["msg"] = "error-server";
+			return View(model);
         }
 
         [Authorize(Roles = "Admin")]
@@ -343,8 +349,8 @@ namespace BalekShop.Controllers
             {
                 return RedirectToAction("Get");
             }
-            TempData["msg"] = "Error has occured on server side";
-            return View(model);
+            TempData["msg"] = "error-server";
+			return View(model);
         }
 
         [Authorize(Roles = "Admin")]

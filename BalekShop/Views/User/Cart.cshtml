@@ -1,4 +1,4 @@
-﻿@using BalekShop.Models.Domain;
+﻿@using BalekShop.Models;
 @model List<BookCart>;
 @{
 	Layout = "_StoreLayout";
@@ -9,6 +9,10 @@
 	}
 
 }
+@using BalekShop.Repositories.Language;
+@inject LanguageService language;
+
+
 
 <div>
 	<div class="container">
@@ -16,13 +20,14 @@
 			<div class="col-md-6">
 				<div class="colored">
 					<h1 class="page-title">Cart</h1>
-					<h4>Total Price = @totalPrice₺</h4>
+					<h4>@language.Getkey("total-price") = @totalPrice₺</h4>
 					@if (TempData["msg"] != null)
 					{
 						<div class="form-group">
 							@TempData["msg"]
 						</div>
 					}
+					<button type="submit">@language.Getkey("order-and-pay")</button>
 				</div>
 			</div>
 		</div>
@@ -40,7 +45,7 @@
 					<figure class="product-style">
 						<img src="@item.Book.BookImage" alt="Books" class="product-item">
 					<form asp-action="DeleteBook" asp-route-id="@item.Book.Id">
-						<button type="submit" class="add-to-cart" data-product-tile="add-to-cart">Delete</button>
+							<button type="submit" class="add-to-cart" data-product-tile="add-to-cart">@language.Getkey("delete")</button>
 					</form>
 						<figcaption>
 							<h3>@item.Book.Title</h3>
@@ -48,7 +53,7 @@
 							<div class="item-price"> @item.Book.Price x @item.Amount =
 								@(item.Book.Price * item.Amount)₺
 							</div>
-							<div class="item-price">Amount: @item.Amount</div>
+							<div class="item-price">@language.Getkey("amount"): @item.Amount</div>
 						</figcaption>
 					</figure>
 				}
