@@ -1,18 +1,20 @@
-﻿@model IEnumerable<BalekShop.Models.Domain.User>
+﻿@using BalekShop.Repositories.Language;
+@model IEnumerable<BalekShop.Models.Domain.User>
 @{
 }
+@inject LanguageService language;
 
 <div class="container pt-3">    
     <div class="row">
         <div class="col-md-6">
-            <h3>Users</h3>
+            <h3>@language.Getkey("user")</h3>
             <table  class="table table-stripped table-bordered table-light">
                 <thead>
                     <tr>
-                        <th>Edit</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Edit</th>
+                        <th>@language.Getkey("edit")</th>
+                        <th>@language.Getkey("username")</th>
+                        <th>@language.Getkey("email")</th>
+                        <th>@language.Getkey("delete")</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,7 +26,7 @@
                             <td>@item.UserName</td>
                             <td>@item.Email</td>                            
                         <td>                                
-                            <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/user/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>
+                            <a class="btn btn-outline-danger" onclick="return window.confirm('Are you sure?')" href="/user/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>
                         </td>
                     </tr>
                     }
@@ -34,7 +36,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <a class="btn btn-success" href="/User/Add">New User</a>
+            <a class="btn btn-success" href="/User/Add">@language.Getkey("new") @language.Getkey("user")</a>
         </div>
     </div>
 </div>

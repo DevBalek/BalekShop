@@ -8,6 +8,6 @@ namespace BalekShop.Repositories.Abstract
         bool Update(Genre model);
         bool Delete(int id);
         Genre FindById(int id);
-        IEnumerable<Genre> GetAll();
+        IEnumerable<Genre> Get();
     }
 }

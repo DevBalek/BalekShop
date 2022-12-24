@@ -23,18 +23,18 @@ namespace BalekShop.Controllers
         public IActionResult Add()
         {
             var model = new Book();
-            model.AuthorList = authorService.GetAll().Select(a => new SelectListItem { Text = a.AuthorName, Value = a.Id.ToString() }).ToList();
-            model.PublisherList = publisherService.GetAll().Select(a => new SelectListItem { Text = a.PublisherName, Value = a.Id.ToString() }).ToList();
-            model.GenreList = genreService.GetAll().Select(a => new SelectListItem { Text = a.Name, Value = a.Id.ToString() }).ToList();
+            model.AuthorList = authorService.Get().Select(a => new SelectListItem { Text = a.AuthorName, Value = a.Id.ToString() }).ToList();
+            model.PublisherList = publisherService.Get().Select(a => new SelectListItem { Text = a.PublisherName, Value = a.Id.ToString() }).ToList();
+            model.GenreList = genreService.Get().Select(a => new SelectListItem { Text = a.Name, Value = a.Id.ToString() }).ToList();
             return View(model);
         }
 
         [HttpPost]
         public IActionResult Add(Book model)
         {
-            model.AuthorList = authorService.GetAll().Select(a => new SelectListItem { Text = a.AuthorName, Value = a.Id.ToString(),Selected=a.Id==model.AuthorId}).ToList();
-            model.PublisherList = publisherService.GetAll().Select(a => new SelectListItem { Text = a.PublisherName, Value = a.Id.ToString(),Selected=a.Id==model.PubhlisherId }).ToList();
-            model.GenreList = genreService.GetAll().Select(a => new SelectListItem { Text = a.Name, Value = a.Id.ToString(),Selected=a.Id==model.GenreId }).ToList();
+            model.AuthorList = authorService.Get().Select(a => new SelectListItem { Text = a.AuthorName, Value = a.Id.ToString(),Selected=a.Id==model.AuthorId}).ToList();
+            model.PublisherList = publisherService.Get().Select(a => new SelectListItem { Text = a.PublisherName, Value = a.Id.ToString(),Selected=a.Id==model.PubhlisherId }).ToList();
+            model.GenreList = genreService.Get().Select(a => new SelectListItem { Text = a.Name, Value = a.Id.ToString(),Selected=a.Id==model.GenreId }).ToList();
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -53,18 +53,18 @@ namespace BalekShop.Controllers
         public IActionResult Update(int id)
         {
             var model = bookService.FindById(id);
-            model.AuthorList = authorService.GetAll().Select(a => new SelectListItem { Text = a.AuthorName, Value = a.Id.ToString(), Selected = a.Id == model.AuthorId }).ToList();
-            model.PublisherList = publisherService.GetAll().Select(a => new SelectListItem { Text = a.PublisherName, Value = a.Id.ToString(), Selected = a.Id == model.PubhlisherId }).ToList();
-            model.GenreList = genreService.GetAll().Select(a => new SelectListItem { Text = a.Name, Value = a.Id.ToString(), Selected = a.Id == model.GenreId }).ToList();
+            model.AuthorList = authorService.Get().Select(a => new SelectListItem { Text = a.AuthorName, Value = a.Id.ToString(), Selected = a.Id == model.AuthorId }).ToList();
+            model.PublisherList = publisherService.Get().Select(a => new SelectListItem { Text = a.PublisherName, Value = a.Id.ToString(), Selected = a.Id == model.PubhlisherId }).ToList();
+            model.GenreList = genreService.Get().Select(a => new SelectListItem { Text = a.Name, Value = a.Id.ToString(), Selected = a.Id == model.GenreId }).ToList();
             return View(model);
         }
 
         [HttpPost]
         public IActionResult Update(Book model)
         {
-            model.AuthorList = authorService.GetAll().Select(a => new SelectListItem { Text = a.AuthorName, Value = a.Id.ToString(), Selected = a.Id == model.AuthorId }).ToList();
-            model.PublisherList = publisherService.GetAll().Select(a => new SelectListItem { Text = a.PublisherName, Value = a.Id.ToString(), Selected = a.Id == model.PubhlisherId }).ToList();
-            model.GenreList = genreService.GetAll().Select(a => new SelectListItem { Text = a.Name, Value = a.Id.ToString(), Selected = a.Id == model.GenreId }).ToList();
+            model.AuthorList = authorService.Get().Select(a => new SelectListItem { Text = a.AuthorName, Value = a.Id.ToString(), Selected = a.Id == model.AuthorId }).ToList();
+            model.PublisherList = publisherService.Get().Select(a => new SelectListItem { Text = a.PublisherName, Value = a.Id.ToString(), Selected = a.Id == model.PubhlisherId }).ToList();
+            model.GenreList = genreService.Get().Select(a => new SelectListItem { Text = a.Name, Value = a.Id.ToString(), Selected = a.Id == model.GenreId }).ToList();
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -72,7 +72,7 @@ namespace BalekShop.Controllers
             var result = bookService.Update(model);
             if (result)
             {
-                return RedirectToAction("GetAll");
+                return RedirectToAction("Get");
             }
             TempData["msg"] = "Error has occured on server side";
             return View(model);
@@ -83,13 +83,13 @@ namespace BalekShop.Controllers
         {
 
             var result = bookService.Delete(id);
-            return RedirectToAction("GetAll");
+            return RedirectToAction("Get");
         }
 
-        public IActionResult GetAll()
+        public IActionResult Get()
         {
 
-            var data = bookService.GetAll();
+            var data = bookService.Get();
             return View(data);
         }
     }

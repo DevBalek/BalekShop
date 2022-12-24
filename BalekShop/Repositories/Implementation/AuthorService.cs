@@ -46,7 +46,7 @@ namespace BalekShop.Repositories.Implementation
             return context.Author.Find(id);
         }
 
-        public IEnumerable<Author> GetAll()
+        public IEnumerable<Author> Get()
         {
             return context.Author.ToList();
         }

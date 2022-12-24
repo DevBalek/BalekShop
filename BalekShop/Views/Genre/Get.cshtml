@@ -1,18 +1,20 @@
-﻿@model IEnumerable<BalekShop.Models.Domain.Genre>
+﻿@using BalekShop.Repositories.Language;
+@model IEnumerable<BalekShop.Models.Domain.Genre>
 @{
 }
+@inject LanguageService language;
 
 <div class="container pt-3">
     
     <div class="row">
         <div class="col-md-4">
-            <h3>Genres</h3>
+            <h3>@language.Getkey("genre")</h3>
             <table  class="table table-stripped table-bordered table-light">
                 <thead>
                     <tr>
-                        <th>Edit</th>
-                        <th>Name</th>
-                        <th>Delete</th>
+                        <th>@language.Getkey("edit")</th>
+                        <th>@language.Getkey("genre")</th>
+                        <th>@language.Getkey("delete")</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,7 +25,7 @@
                         </td>
                         <td>@item.Name</td>
                         <td>                                
-                            <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/Genre/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>
+                            <a class="btn btn-outline-danger" onclick="return window.confirm('Are you sure?')" href="/Genre/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>
                         </td>
                     </tr>
                     }
@@ -33,7 +35,7 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <a class="btn btn-success" href="/Genre/Add">New Genre</a>
+            <a class="btn btn-success" href="/Genre/Add">@language.Getkey("new") @language.Getkey("genre")</a>
         </div>
     </div>
 </div>

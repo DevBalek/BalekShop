@@ -52,7 +52,7 @@ namespace BalekShop.Controllers
             var result = service.Update(model);
             if (result)
             {
-                return RedirectToAction("GetAll");
+                return RedirectToAction("Get");
             }
             TempData["msg"] = "Error has occured on server side";
             return View(model);
@@ -63,13 +63,13 @@ namespace BalekShop.Controllers
         {
 
             var result = service.Delete(id);
-            return RedirectToAction("GetAll");
+            return RedirectToAction("Get");
         }
 
-        public IActionResult GetAll()
+        public IActionResult Get()
         {
 
-            var data = service.GetAll();
+            var data = service.Get();
             return View(data);
         }
 

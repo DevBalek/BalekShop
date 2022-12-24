@@ -46,7 +46,7 @@ namespace BalekShop.Repositories.Implementation
             return context.User.Find(id);
         }
 
-        public IEnumerable<User> GetAll()
+        public IEnumerable<User> Get()
         {
             var data = (from user in context.User                        
                         select new User

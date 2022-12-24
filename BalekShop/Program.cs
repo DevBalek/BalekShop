@@ -3,6 +3,11 @@ using BalekShop.Models.Domain;
 using BalekShop.Repositories.Abstract;
 using BalekShop.Repositories.Implementation;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using BalekShop.Repositories.Language;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
+using System.Reflection;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +33,46 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 	options.AccessDeniedPath = "/User/Login";   
 });
 
+//LANGUAGE
+builder.Services.AddSingleton<LanguageService>();
+
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+builder.Services.AddMvc()
+    .AddViewLocalization()
+    .AddDataAnnotationsLocalization(options =>
+    {
+        options.DataAnnotationLocalizerProvider = (type, factory) =>
+        {
+
+            var assemblyName = new AssemblyName(typeof(ShareResource).GetTypeInfo().Assembly.FullName);
+
+            return factory.Create("ShareResource", assemblyName.Name);
+
+        };
+
+    });
+
+builder.Services.Configure<RequestLocalizationOptions>(
+    options =>
+    {
+        var supportedCultures = new List<CultureInfo>
+            {
+                            new CultureInfo("en-US"),
+                            new CultureInfo("tr-TR"),                            
+            };
+
+        options.DefaultRequestCulture = new RequestCulture(culture: "tr-TR", uiCulture: "tr-TR");
+
+        options.SupportedCultures = supportedCultures;
+        options.SupportedUICultures = supportedCultures;
+        options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
+    });
+
+
+
+
+//LANGUAGE
 var app = builder.Build();
 
 
@@ -44,6 +89,16 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+//LANGUAGE
+var supportedCultures = new[] { "en-US", "tr-TR"};
+
+var localizationOptions = new RequestLocalizationOptions()
+    .SetDefaultCulture(supportedCultures[1])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
+
+app.UseRequestLocalization(localizationOptions);
+//LANGUAGE
 app.UseAuthentication();
 app.UseAuthorization();
 

@@ -1,9 +1,10 @@
-﻿@model IEnumerable<BalekShop.Models.Domain.Book>
+﻿@using BalekShop.Repositories.Language;
+@model IEnumerable<BalekShop.Models.Domain.Book>
+@inject LanguageService language;
 @{
 	Layout = "_StoreLayout";
 	var username = ViewBag.username;
 }
-
 
 <div>
 	<div class="container">
@@ -31,12 +32,12 @@
 					<figure class="product-style">
 						<img src="@item.BookImage" alt="Books" class="product-item">
 					<form asp-action="AddCart" asp-route-id="@item.Id">
-						<button type="submit" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
+							<button type="submit" class="add-to-cart" data-product-tile="add-to-cart">@language.Getkey("add-to-cart")</button>
 					</form>
 						<figcaption>
 							<h3>@item.Title</h3>
 							<p>@item.AuthorName</p>
-							<div class="item-price">@item.Price,00₺</div>
+							<div class="item-price">@language.Getkey("price"): @item.Price,00₺</div>
 						</figcaption>
 					</figure>
 				}

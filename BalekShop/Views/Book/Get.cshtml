@@ -1,25 +1,27 @@
-﻿@model IEnumerable<BalekShop.Models.Domain.Book>
+﻿@using BalekShop.Repositories.Language;
+@model IEnumerable<BalekShop.Models.Domain.Book>
 @{
 }
+@inject LanguageService language;
 
 <div class="container pt-3">   
     <div class="row">
         <div class="col-md-12">
-            <h3>Books</h3>
+            <h3>@language.Getkey("book")</h3>
 
             <table  class="table table-stripped table-bordered ">
                 <thead>
                     <tr>
-                        <th>Edit</th>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Price</th>
-                        <th>Publisher</th>                        
-                        <th>Isbn</th>                        
-                        <th>Genre</th>
-                        <th>Pages</th>                                                
-                        <th>Delete</th>                        
+                        <th>@language.Getkey("edit")</th>
+                        <th>@language.Getkey("image")</th>
+                        <th>@language.Getkey("title")</th>
+                        <th>@language.Getkey("author")</th>
+                        <th>@language.Getkey("price")</th>
+                        <th>@language.Getkey("publisher")</th>
+                        <th>ISBN</th>
+                        <th>@language.Getkey("genre")</th>
+                        <th>@language.Getkey("total-pages")</th>
+                        <th>@language.Getkey("delete")</th>                        
                     </tr>
                 </thead>
                 <tbody>                    
@@ -28,7 +30,7 @@
                         <td>
                                 <a class="btn btn-primary" href="/Book/Update?id=@item.Id"><i class="bi bi-pencil-square"></i></a>
                         </td>
-                            <td> <a class="btn btn-warning" href="@item.BookImage"><i class="bi bi-image"></i></a></td>
+                            <td> <a class="btn btn-outline-warning" href="@item.BookImage"><i class="bi bi-image"></i></a></td>
                             <td>@item.Title</td>
                             <td>@item.AuthorName</td>
                             <td>@item.Price ₺</td>
@@ -37,7 +39,7 @@
                             <td>@item.GenreName</td>
                             <td>@item.TotalPages</td>                                                        
                         <td>                                 
-                            <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/Book/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>
+                            <a class="btn btn-outline-danger" onclick="return window.confirm('Are you sure?')" href="/Book/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>
                         </td>
                     </tr>
                     }
@@ -47,7 +49,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <a class="btn btn-success" href="/Book/Add">New Book</a>
+            <a class="btn btn-success" href="/Book/Add">@language.Getkey("new") @language.Getkey("book")</a>
         </div>
     </div>
 </div>

@@ -8,6 +8,6 @@ namespace BalekShop.Repositories.Abstract
         bool Update(User model);
         bool Delete(int id);
         User FindById(int id);
-        IEnumerable<User> GetAll();
+        IEnumerable<User> Get();
     }
 }

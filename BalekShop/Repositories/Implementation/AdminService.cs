@@ -46,7 +46,7 @@ namespace BalekShop.Repositories.Implementation
 			return context.Admin.Find(id);
 		}
 
-		public IEnumerable<Admin> GetAll()
+		public IEnumerable<Admin> Get()
 		{
 			return context.Admin.ToList();
 		}

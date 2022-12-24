@@ -10,6 +10,6 @@ namespace BalekShop.Repositories.Abstract
         Cart FindById(int id);
         public List<Cart> FindByCartsUserId(int id);
 
-		IEnumerable<Cart> GetAll();
+		IEnumerable<Cart> Get();
     }
 }

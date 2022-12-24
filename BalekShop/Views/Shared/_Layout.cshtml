@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using BalekShop.Repositories.Language;
+@inject LanguageService language;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -14,32 +17,32 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
 <body class="bg-light" >
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">  Admin</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">        
+        <a class="navbar-brand" href="/Admin/Get">BALEKSHOP ADMIN</a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a href="/Admin/GetAll" class="nav-link">Admin</a>
+                <a href="/Admin/Get" class="nav-link">@language.Getkey("admin")</a>
             </li>
 
             <li class="nav-item">
-                <a href="/User/GetAll" class="nav-link">User</a>
+                <a href="/User/Get" class="nav-link">@language.Getkey("user")</a>
             </li>
 
             <li class="nav-item">
-                <a href="/Genre/GetAll" class="nav-link">Genre</a>
+                <a href="/Genre/Get" class="nav-link">@language.Getkey("genre")</a>
             </li>
             <li class="nav-item">
-                <a href="/Author/GetAll" class="nav-link">Author</a>
+                <a href="/Author/Get" class="nav-link">@language.Getkey("author")</a>
             </li>
             <li class="nav-item active">
-                <a href="/Publisher/GetAll" class="nav-link">Publisher</a>
+                <a href="/Publisher/Get" class="nav-link">@language.Getkey("publisher")</a>
             </li>
 
             <li class="nav-item">
-                <a href="/Book/GetAll" class="nav-link">Book</a>
+                <a href="/Book/Get" class="nav-link">@language.Getkey("book")</a>
             </li>            
             <li class="nav-item">
-                <a href="/User/Store" class="nav-link">BackToStore</a>
+                <a href="/User/Store" class="nav-link">@language.Getkey("back-to-store")</a>
             </li>
         </ul>
 

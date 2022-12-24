@@ -1,4 +1,6 @@
-﻿@model BalekShop.Models.Domain.User
+﻿@using BalekShop.Repositories.Language;
+@model BalekShop.Models.Domain.User
+@inject LanguageService language
 @{
     Layout = "_StoreLayout";
 }
@@ -8,7 +10,7 @@
 <div class="container login-container">
     <div class="row">
         <div class="col-md-6 login-form-2">
-            <h2>Account</h2>
+            <h2>@language.Getkey("account")</h2>
             @if (TempData["msg"] != null)
             {
                 <div class="form-group">
@@ -17,28 +19,28 @@
             }
             <form asp-action="Account" method="POST">
                 <div class="form-group">
-                    <label asp-for="UserName">Username</label>
+                    <label asp-for="UserName">@language.Getkey("username")</label>
                     <input type="text" class="form-control" asp-for="UserName" />
                     <span asp-validation-for="UserName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Password">Password</label>
+                    <label asp-for="Password">@language.Getkey("password")</label>
                     <input type="password" class="form-control" asp-for="Password" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Email">Email</label>
+                    <label asp-for="Email">@language.Getkey("email")</label>
                     <input type="email" class="form-control" asp-for="Email" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Adress">Adress</label>
+                    <label asp-for="Adress">@language.Getkey("adress")</label>
                     <input style="height:100" type="text" class="form-control" asp-for="Adress" />
                     <span asp-validation-for="Adress" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btnSubmit" value="Update Profile" />
-                </div>                
+                    <input type="submit" class="btnSubmit" value="@language.Getkey("update-profile")" />
+                </div>
             </form>
         </div>
     </div>

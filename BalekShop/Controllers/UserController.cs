@@ -52,7 +52,7 @@ namespace BalekShop.Controllers
 
 			ViewBag.username = username;
 
-			var data = bookService.GetAll();			
+			var data = bookService.Get();			
 
 			return View(data);
         }
@@ -73,7 +73,7 @@ namespace BalekShop.Controllers
 
 				int userID = Convert.ToInt32(userIdString);
 
-				myCart = cartService.GetAll().Where(a => a.UserID == userID).ToList();
+				myCart = cartService.Get().Where(a => a.UserID == userID).ToList();
 				
 				foreach(var item in myCart)
 				{
@@ -101,7 +101,7 @@ namespace BalekShop.Controllers
 				
 				int userID = Convert.ToInt32(userIdString);
 
-				myCart = cartService.GetAll().Where(a=>a.UserID==userID).ToList();
+				myCart = cartService.Get().Where(a=>a.UserID==userID).ToList();
 
 				if (myCart.Count == 0)
 				{
@@ -163,7 +163,7 @@ namespace BalekShop.Controllers
 			User? result = null;
             try
 			{
-				result = userService.GetAll().Where(a => a.Email == model.Email).Where(b => b.Password == model.Password).First();
+				result = userService.Get().Where(a => a.Email == model.Email).Where(b => b.Password == model.Password).First();
 			}
 			catch {
 
@@ -228,7 +228,7 @@ namespace BalekShop.Controllers
 			Admin? result = null;
             try
             {
-                result = adminService.GetAll().Where(a => a.Email == model.Email).Where(b => b.Password == model.Password).First();
+                result = adminService.Get().Where(a => a.Email == model.Email).Where(b => b.Password == model.Password).First();
 
                 var claims = new List<Claim>
                 {
@@ -341,7 +341,7 @@ namespace BalekShop.Controllers
             var result = userService.Update(model);
             if (result)
             {
-                return RedirectToAction("GetAll");
+                return RedirectToAction("Get");
             }
             TempData["msg"] = "Error has occured on server side";
             return View(model);
@@ -352,13 +352,13 @@ namespace BalekShop.Controllers
         {
 
             var result = userService.Delete(id);
-            return RedirectToAction("GetAll");
+            return RedirectToAction("Get");
         }
 
         [Authorize(Roles = "Admin")]
-        public IActionResult GetAll()
+        public IActionResult Get()
         {
-            var data = userService.GetAll();
+            var data = userService.Get();
             return View(data);
         }
 

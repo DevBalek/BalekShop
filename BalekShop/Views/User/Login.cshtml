@@ -1,14 +1,15 @@
-﻿@model BalekShop.Models.Domain.ValidateUser
+﻿@using BalekShop.Repositories.Language;
+@model BalekShop.Models.Domain.ValidateUser
 @{
     Layout = "_StoreLayout";
 }
-
+@inject LanguageService language;
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container login-container">
     <div class="row">
         <div class="col-md-6 login-form-1">
-            <h2>Login</h2>
+            <h2>@language.Getkey("login")</h2>
             @if (TempData["msg"] != null)
             {
                 <div class="form-group">
@@ -17,19 +18,19 @@
             }  
             <form asp-action ="Login" method="post">
                 <div class="form-group">
-                    <label asp-for="Email">Email</label>
+                    <label asp-for="Email">@language.Getkey("email")</label>
                     <input type="Email" class="form-control" asp-for="Email" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Password">Password</label>
+                    <label asp-for="Password">@language.Getkey("password")</label>
                     <input type="password" class="form-control" asp-for="Password" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>                  
                 <div class="form-group">                   
                     <input type="submit" class="btnSubmit" value="Login" />                    
                 </div>   
-                <a href="/User/Signup">Signup</a>    
+                <a href="/User/Signup">@language.Getkey("signup")</a>
             </form>                      
         </div>       
     </div>

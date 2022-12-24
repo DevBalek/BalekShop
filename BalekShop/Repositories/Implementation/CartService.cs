@@ -52,7 +52,7 @@ namespace BalekShop.Repositories.Implementation
 			return context.Cart.Where(a=>a.UserID==id).ToList();
 		}
 
-		public IEnumerable<Cart> GetAll()
+		public IEnumerable<Cart> Get()
         {
             return context.Cart.ToList();
         }

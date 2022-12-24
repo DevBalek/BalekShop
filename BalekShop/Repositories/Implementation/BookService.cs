@@ -46,7 +46,7 @@ namespace BalekShop.Repositories.Implementation
             return context.Book.Find(id);
         }
 
-        public IEnumerable<Book> GetAll() 
+        public IEnumerable<Book> Get() 
         {
             var data = (from book in context.Book
                         join author in context.Author

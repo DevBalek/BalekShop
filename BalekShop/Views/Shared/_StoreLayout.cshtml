@@ -1,4 +1,5 @@
-﻿
+﻿@using BalekShop.Repositories.Language;
+@inject LanguageService language
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,38 +43,34 @@
 					<div class="col-md-9">						
 						<div class="right-element">														
 							<div class="action-menu">
-								<a href="/User/Cart" class="nav-link"><i class="bi bi-basket3"></i> Cart</a>
+								<a href="/User/Cart" class="nav-link"><i class="bi bi-basket3"></i> @language.Getkey("cart")</a>
 							</div>
 
 							@if(User.IsInRole("Admin")){
 								<div class="action-menu">
-									<a href="/Admin/GetAll" class="nav-link"><i class="bi bi-clipboard2-data"></i> Admin Panel</a>
+									<a href="/Admin/Get" class="nav-link"><i class="bi bi-clipboard2-data"></i> @language.Getkey("admin-panel")</a>
 								</div>
 							}
 							
 							@if (User.IsInRole("User"))
 							{
 								<div class="action-menu">
-									<a href="/User/Account" class="nav-link"><i class="bi bi-person-bounding-box"></i> Account</a>
+									<a href="/User/Account" class="nav-link"><i class="bi bi-person-bounding-box"></i> @language.Getkey("account")</a>
 								</div>
 							}
 
 							@if (User.Identity.IsAuthenticated)
-							{								
-								
+							{
 								<div class="action-menu">
-									<a href="/User/Logout" class="nav-link"><i href="/User/Logout" class="bi bi-box-arrow-in-left"></i> Logout</a>
+									<a href="/User/Logout" class="nav-link"><i href="/User/Logout" class="bi bi-box-arrow-in-left"></i> @language.Getkey("logout")</a>
 								</div>								
 							}
 							else
 							{
 								<div class="action-menu">
-									<a href="/User/Login" class="nav-link"><i class="bi bi-person-bounding-box"></i> Login</a>
+									<a href="/User/Login" class="nav-link"><i class="bi bi-person-bounding-box"></i> @language.Getkey("login")</a>
 								</div>
 							}
-
-							
-
 						</div><!--top-right-->
 					</div>
 
@@ -86,151 +83,54 @@
 	@RenderBody()
 
 	<footer id="footer">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-md-4">
-
-					<div class="footer-item">
-						<div class="company-brand">
-							<img src="~/img/balekshop-logo.png" alt="logo" class="footer-logo">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sed ptibus liberolectus nonet psryroin. Amet sed lorem posuere sit iaculis amet, ac urna. Adipiscing fames semper erat ac in suspendisse iaculis.</p>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-md-2">
-
-					<div class="footer-menu">
-						<h5>About Us</h5>
-						<ul class="menu-list">
-							<li class="menu-item">
-								<a href="#">vision</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">articles </a>
-							</li>
-							<li class="menu-item">
-								<a href="#">careers</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">service terms</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">donate</a>
-							</li>
-						</ul>
-					</div>
-
-				</div>
-				<div class="col-md-2">
-
-					<div class="footer-menu">
-						<h5>Discover</h5>
-						<ul class="menu-list">
-							<li class="menu-item">
-								<a href="#">Home</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Books</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Authors</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Subjects</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Advanced Search</a>
-							</li>
-						</ul>
-					</div>
-
-				</div>
-				<div class="col-md-2">
-
-					<div class="footer-menu">
-						<h5>My account</h5>
-						<ul class="menu-list">
-							<li class="menu-item">
-								<a href="#">Sign In</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">View Cart</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">My Wishtlist</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Track My Order</a>
-							</li>
-						</ul>
-					</div>
-
-				</div>
-				<div class="col-md-2">
-
-					<div class="footer-menu">
-						<h5>Help</h5>
-						<ul class="menu-list">
-							<li class="menu-item">
-								<a href="#">Help center</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Report a problem</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Suggesting edits</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Contact us</a>
-							</li>
-						</ul>
-					</div>
-
-				</div>
-
-			</div>
-			<!-- / row -->
-
-		</div>
+		
 	</footer>
 
 	<div id="footer-bottom">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
-
-					<div class="copyright">
-						<div class="row">
-
-							<div class="col-md-6">
-								<p>© 2022 Tüm Hakları Saklıdır - BalekShop </p>
+				<div class="col-md-12">		
+					
+					<div class="col-md-3">
+						<div class="left-element">
+							<div class="main-logo">
+								<a href="/User/Store"><img src="~/img/balekshop-logo.png" alt="logo"></a>
 							</div>
+						</div><!--social-links-->
+					</div>
+					<div class="col-md-9">					
+						<div class="copyright">
+							<div class="row">
 
-							<div class="col-md-6">
-								<div class="social-links align-right">
-									<ul>
-										<li>
-											<a href="#"><i class="icon icon-facebook"></i></a>
-										</li>
-										<li>
-											<a href="#"><i class="icon icon-twitter"></i></a>
-										</li>
-										<li>
-											<a href="#"><i class="icon icon-youtube-play"></i></a>
-										</li>
-										<li>
-											<a href="#"><i class="icon icon-behance-square"></i></a>
-										</li>
-									</ul>
+								<div class="col-md-6">
+									<p>© 2022 Tüm Hakları Saklıdır - BalekShop </p>
+								</div>
+
+								<div class="col-md-6">
+									<div class="social-links align-right">
+										<ul>
+											<li><a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="nav-link"><i class="flag-icon flag-icon-gb"></i> English</a></li>
+
+											<li><a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="tr-TR" class="nav-link"><i class="flag-icon flag-icon-tr"></i> Türkçe</a></li>
+
+											<li>
+												<a href="#"><i class="icon icon-facebook"></i></a>
+											</li>
+											<li>
+												<a href="#"><i class="icon icon-twitter"></i></a>
+											</li>
+											<li>
+												<a href="#"><i class="icon icon-youtube-play"></i></a>
+											</li>
+											<li>
+												<a href="#"><i class="icon icon-behance-square"></i></a>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
-
-						</div>
-					</div><!--grid-->
-
+						</div><!--grid-->
+					</div>
 				</div><!--footer-bottom-content-->
 			</div>
 		</div>
