@@ -252,8 +252,7 @@ namespace BalekShop.Controllers
             catch
             {
 				return false;
-            }
-			return false;
+            }			
 		}
 
 		[Authorize(Roles ="User")]
@@ -294,6 +293,47 @@ namespace BalekShop.Controllers
 			TempData["msg"] = "error-server";
 			return View(model);
 		}
+
+
+		public IActionResult DeleteBook(int id)
+		{
+            dynamic user;
+            string userIdString = "";
+            List<Cart>? myCart = null;
+
+            try
+            {
+                user = httpContextAccessor.HttpContext.User;
+                userIdString = user.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+                int userID = Convert.ToInt32(userIdString);
+
+                myCart = cartService.Get().Where(a => a.UserID == userID).ToList();
+
+                if (myCart.Count != 0)                
+                {
+                    var isBookExist = myCart!.Any(item => item.BookID == id);
+
+                    if (isBookExist)
+                    {
+                        TempData["msg"] = "successful";						
+                        Cart cart = myCart!.Where(a => a.BookID == id).First();
+						cartService.Delete(cart.Id);                  
+                    }
+                    else
+                    {
+                        TempData["msg"] = "error-server";                        
+                    }
+                }
+            }
+            catch
+            {
+				TempData["msg"] = "error-server";
+			}
+            
+            return RedirectToAction(nameof(Cart));
+        }
+
 
 		//
 		//

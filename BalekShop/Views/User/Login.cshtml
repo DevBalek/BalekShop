@@ -13,7 +13,7 @@
             @if (TempData["msg"] != null)
             {
                 <div class="form-group">
-                    @TempData["msg"]
+                    @language.Getkey(@TempData["msg"].ToString())
                 </div>
             }  
             <form asp-action ="Login" method="post">

@@ -114,6 +114,10 @@ app.MapControllerRoute(
     pattern: "{controller=User}/{action=Store}/{id?}");
 
 app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=User}/{action=DeleteBook}/{id?}");
+
+app.MapControllerRoute(
 	name: "AddCart",
 	pattern: "{controller=User}/{action=AddCart}/{id?}"
 	); 
