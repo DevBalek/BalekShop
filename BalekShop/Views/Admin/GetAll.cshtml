@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BalekShop.Models.Domain.Admin>
+@{
+}
+
+<div class="container pt-3">    
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Admins</h3>
+            <table  class="table table-stripped table-bordered table-light">
+                <thead>
+                    <tr>
+                        <th>Edit</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model){
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary" href="/Admin/Update?id=@item.Id"><i class="bi bi-pencil-square"></i></a>
+                        </td>
+                            <td>@item.Email</td>
+                            <td>@item.Password</td>                            
+                        <td>                                
+                            <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/Admin/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-success" href="/Admin/Add">New Admin</a>
+        </div>
+    </div>
+</div>
+

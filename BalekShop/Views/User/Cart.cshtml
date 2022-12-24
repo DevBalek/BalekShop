@@ -17,6 +17,12 @@
 				<div class="colored">
 					<h1 class="page-title">Cart</h1>
 					<h4>Total Price = @totalPrice₺</h4>
+					@if (TempData["msg"] != null)
+					{
+						<div class="form-group">
+							@TempData["msg"]
+						</div>
+					}
 				</div>
 			</div>
 		</div>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BalekShop.Models.Domain.User>
+@{
+}
+
+<div class="container pt-3">    
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Users</h3>
+            <table  class="table table-stripped table-bordered table-light">
+                <thead>
+                    <tr>
+                        <th>Edit</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model){
+                    <tr>
+                        <td>
+                                <a class="btn btn-primary" href="/User/Update?id=@item.Id"><i class="bi bi-pencil-square"></i></a>
+                        </td>
+                            <td>@item.UserName</td>
+                            <td>@item.Email</td>                            
+                        <td>                                
+                            <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/user/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-success" href="/User/Add">New User</a>
+        </div>
+    </div>
+</div>
+

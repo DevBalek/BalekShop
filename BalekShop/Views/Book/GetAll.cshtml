@@ -2,47 +2,52 @@
 @{
 }
 
-<div class="container pt-3">
-    <div class="row">
-        <div class="col-md-12">
-            <a class="btn btn-dark" href="/Book/Add">+ Add more</a>
-        </div>
-    </div>
+<div class="container pt-3">   
     <div class="row">
         <div class="col-md-12">
             <h3>Books</h3>
 
-            <table  class="table table-stripped table-bordered table-dark">
+            <table  class="table table-stripped table-bordered ">
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Genre</th>
-                        <th>Isbn</th>
-                        <th>Total Pages</th>
-                        <th>Author</th>
-                        <th>Publisher</th>
+                        <th>Edit</th>
                         <th>Image</th>
-                        <th>Action</th>                        
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                        <th>Publisher</th>                        
+                        <th>Isbn</th>                        
+                        <th>Genre</th>
+                        <th>Pages</th>                                                
+                        <th>Delete</th>                        
                     </tr>
                 </thead>
-                <tbody>
+                <tbody>                    
                     @foreach(var item in Model){
                     <tr>
-                            <td>@item.Title</td>
-                            <td>@item.GenreName</td>
-                            <td>@item.Isbn</td>
-                            <td>@item.TotalPages</td>
-                            <td>@item.AuthorName</td>
-                            <td>@item.PublisherName</td>                                                        
-                            <td> <a class="btn btn-warning" href="@item.BookImage"><i class="bi bi-box-arrow-up-right"></i></a></td>                                                     
                         <td>
-                                <a class="btn btn-success" href="/Book/Update?id=@item.Id"><i class="bi bi-pen"></i></a> |
-                                <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/Book/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>
+                                <a class="btn btn-primary" href="/Book/Update?id=@item.Id"><i class="bi bi-pencil-square"></i></a>
+                        </td>
+                            <td> <a class="btn btn-warning" href="@item.BookImage"><i class="bi bi-image"></i></a></td>
+                            <td>@item.Title</td>
+                            <td>@item.AuthorName</td>
+                            <td>@item.Price ₺</td>
+                            <td>@item.PublisherName</td>                            
+                            <td>@item.Isbn</td>
+                            <td>@item.GenreName</td>
+                            <td>@item.TotalPages</td>                                                        
+                        <td>                                 
+                            <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/Book/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>
                         </td>
                     </tr>
                     }
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-success" href="/Book/Add">New Book</a>
         </div>
     </div>
 </div>
