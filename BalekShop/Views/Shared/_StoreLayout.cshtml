@@ -31,15 +31,15 @@
 		<div class="top-content">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<div class="left-element">							
 							<div class="main-logo">
-								<a href="/User/Store"><img src="~/img/balekshp.png" alt="logo"></a>
+								<a href="/User/Store"><img src="~/img/balekshop-logo.png" alt="logo"></a>
 							</div>								
 						</div><!--social-links-->
 					</div>
 
-					<div class="col-md-8">						
+					<div class="col-md-9">						
 						<div class="right-element">														
 							<div class="action-menu">
 								<a href="/User/Cart" class="nav-link"><i class="bi bi-basket3"></i> Cart</a>
@@ -51,16 +51,24 @@
 								</div>
 							}
 							
-							@if (User.Identity.IsAuthenticated)
+							@if (User.IsInRole("User"))
 							{
 								<div class="action-menu">
-									<a href="/User/Logout" class="nav-link"><i href="/User/Logout" class="bi bi-box-arrow-in-left"></i> Logout</a>
+									<a href="/User/Account" class="nav-link"><i class="bi bi-person-bounding-box"></i> Account</a>
 								</div>
+							}
+
+							@if (User.Identity.IsAuthenticated)
+							{								
+								
+								<div class="action-menu">
+									<a href="/User/Logout" class="nav-link"><i href="/User/Logout" class="bi bi-box-arrow-in-left"></i> Logout</a>
+								</div>								
 							}
 							else
 							{
 								<div class="action-menu">
-									<a href="/User/Login" class="nav-link"><i class="bi bi-person-bounding-box"></i> Account</a>
+									<a href="/User/Login" class="nav-link"><i class="bi bi-person-bounding-box"></i> Login</a>
 								</div>
 							}
 
@@ -85,7 +93,7 @@
 
 					<div class="footer-item">
 						<div class="company-brand">
-							<img src="~/img/balekshp.png" alt="logo" class="footer-logo">
+							<img src="~/img/balekshop-logo.png" alt="logo" class="footer-logo">
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sed ptibus liberolectus nonet psryroin. Amet sed lorem posuere sit iaculis amet, ac urna. Adipiscing fames semper erat ac in suspendisse iaculis.</p>
 						</div>
 					</div>

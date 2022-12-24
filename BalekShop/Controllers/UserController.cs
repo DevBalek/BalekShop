@@ -250,6 +250,45 @@ namespace BalekShop.Controllers
             }
         }
 
+		[Authorize(Roles ="User")]
+		public IActionResult Account()
+		{
+			dynamic user;
+			string userIdString = "";
+
+			try
+			{
+				user = httpContextAccessor.HttpContext.User;
+				userIdString = user.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+				int userID = Convert.ToInt32(userIdString);
+				
+				var record = userService.FindById(userID);
+				return View(record);
+			}
+			catch
+			{
+				return View();
+			}
+									
+		}
+
+		[HttpPost]
+		public IActionResult Account(User model)
+		{
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+			var result = userService.Update(model);
+			if (result)
+			{
+				return RedirectToAction(nameof(Store));
+			}
+			TempData["msg"] = "Error has occured on server side";
+			return View(model);
+		}
+
 		//
 		//
 		//

@@ -9,19 +9,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<div class="colored">
-					<h1 class="page-title">						
-						Store
-					</h1>
-					@if (username != null)
-					{
-						<h4>Welcome @username</h4>
-					}					
+				<div class="colored">					
 					@if (TempData["msg"] != null)
 					{
-						<div class="form-group">
-							System Message: @TempData["msg"]
-						</div>
+						<h4>System Message: @TempData["msg"] </h4>												
 					}
 				</div>
 			</div>
@@ -29,7 +20,7 @@
 	</div>
 </div><!--site-banner-->
 
-<section class="padding-large">
+<section class="accordion-body">
 	<div class="container">
 		<div class="row">
 
