@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "YtBookStore": {
+    "BalekShop": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
