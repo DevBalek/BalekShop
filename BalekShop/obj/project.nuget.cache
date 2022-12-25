@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WPy24F8Whcoqe3WLHjF+LVVqJVdx6obAIBkhJ9JmmFtHCSnanwQnCVqbTBJS8jvtrioetZanyU/xR4bfVUNJcg==",
+  "dgSpecHash": "qaUqIJmdHlSZQ6o61e1sr/tftwzAqQX3W104+IyIYiMWkK3iK4DhBMIj6zOBHgVjmmd250aemIRJoncKVCpDwQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mfBalek\\ParmisWeb\\BalekShop\\BalekShop.csproj",
+  "projectFilePath": "C:\\Users\\mfBalek\\OneDrive\\Belgeler\\yazilim-projeleri\\BalekShop\\BalekShop\\BalekShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mfBalek\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mfBalek\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mfBalek\\ParmisWeb\\BalekShop\\BalekShop.csproj": {}
+    "C:\\Users\\mfBalek\\OneDrive\\Belgeler\\yazilim-projeleri\\BalekShop\\BalekShop\\BalekShop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mfBalek\\ParmisWeb\\BalekShop\\BalekShop.csproj": {
+    "C:\\Users\\mfBalek\\OneDrive\\Belgeler\\yazilim-projeleri\\BalekShop\\BalekShop\\BalekShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mfBalek\\ParmisWeb\\BalekShop\\BalekShop.csproj",
+        "projectUniqueName": "C:\\Users\\mfBalek\\OneDrive\\Belgeler\\yazilim-projeleri\\BalekShop\\BalekShop\\BalekShop.csproj",
         "projectName": "BalekShop",
-        "projectPath": "C:\\Users\\mfBalek\\ParmisWeb\\BalekShop\\BalekShop.csproj",
+        "projectPath": "C:\\Users\\mfBalek\\OneDrive\\Belgeler\\yazilim-projeleri\\BalekShop\\BalekShop\\BalekShop.csproj",
         "packagesPath": "C:\\Users\\mfBalek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mfBalek\\ParmisWeb\\BalekShop\\obj\\",
+        "outputPath": "C:\\Users\\mfBalek\\OneDrive\\Belgeler\\yazilim-projeleri\\BalekShop\\BalekShop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mfBalek\\AppData\\Roaming\\NuGet\\NuGet.Config",
