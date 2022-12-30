@@ -53,7 +53,7 @@ namespace BalekShop.Controllers
             var result = service.Update(model);
             if (result)
             {
-                return RedirectToAction("Get");
+                return RedirectToAction(nameof(Get));
             }
             TempData["msg"] = "error-server";
             return View(model);
@@ -64,7 +64,7 @@ namespace BalekShop.Controllers
         {
 
             var result = service.Delete(id);
-            return RedirectToAction("Get");
+            return RedirectToAction(nameof(Get));
         }
 
         public IActionResult Get()

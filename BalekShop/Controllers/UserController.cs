@@ -16,23 +16,23 @@ namespace BalekShop.Controllers
     public class UserController : Controller
     {
 
+		private IHttpContextAccessor httpContextAccessor;
 		private readonly IBookService bookService;
 		private readonly IAuthorService authorService;
-		private readonly IGenreService genreService;
-		private readonly IPublisherService publisherService;
 		private readonly IUserService userService;
 		private readonly ICartService cartService;
+		private readonly IGenreService genreService;
+		private readonly IPublisherService publisherService;
         private readonly IAdminService adminService;
-        private IHttpContextAccessor httpContextAccessor;
 
 		public UserController(IBookService bookService, IGenreService genreService, IPublisherService publisherService, IAuthorService authorService,IUserService userService,ICartService cartService, IAdminService adminService, IHttpContextAccessor httpContextAccessor)
 		{
 			this.bookService = bookService;
 			this.genreService = genreService;
-			this.publisherService = publisherService;
-			this.authorService = authorService;
 			this.userService = userService;
 			this.cartService = cartService;
+			this.publisherService = publisherService;
+			this.authorService = authorService;
 			this.httpContextAccessor = httpContextAccessor;
             this.adminService = adminService;
 			
@@ -387,7 +387,7 @@ namespace BalekShop.Controllers
             var result = userService.Update(model);
             if (result)
             {
-                return RedirectToAction("Get");
+                return RedirectToAction(nameof(Get));
             }
             TempData["msg"] = "error-server";
 			return View(model);
@@ -398,7 +398,7 @@ namespace BalekShop.Controllers
         {
 
             var result = userService.Delete(id);
-            return RedirectToAction("Get");
+            return RedirectToAction(nameof(Get));
         }
 
         [Authorize(Roles = "Admin")]

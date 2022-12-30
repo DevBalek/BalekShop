@@ -10,11 +10,12 @@ namespace BalekShop.Controllers
     [Authorize(Roles ="Admin")]
     public class BookController : Controller
     {
-        private readonly IBookService bookService;
         private readonly IAuthorService authorService;
-        private readonly IGenreService genreService;
-        private readonly IPublisherService publisherService;   
-        public BookController(IBookService bookService, IGenreService genreService, IPublisherService publisherService,IAuthorService authorService)
+		private readonly IPublisherService publisherService;
+		private readonly IGenreService genreService;
+		private readonly IBookService bookService;
+
+		public BookController(IBookService bookService, IGenreService genreService, IPublisherService publisherService,IAuthorService authorService)
         {
             this.bookService = bookService;
             this.genreService = genreService;
@@ -54,9 +55,9 @@ namespace BalekShop.Controllers
         public IActionResult Update(int id)
         {
             var model = bookService.FindById(id);
-            model.AuthorList = authorService.Get().Select(a => new SelectListItem { Text = a.AuthorName, Value = a.Id.ToString(), Selected = a.Id == model.AuthorId }).ToList();
-            model.PublisherList = publisherService.Get().Select(a => new SelectListItem { Text = a.PublisherName, Value = a.Id.ToString(), Selected = a.Id == model.PubhlisherId }).ToList();
-            model.GenreList = genreService.Get().Select(a => new SelectListItem { Text = a.Name, Value = a.Id.ToString(), Selected = a.Id == model.GenreId }).ToList();
+			model.AuthorList = authorService.Get().Select(a => new SelectListItem { Text = a.AuthorName, Value = a.Id.ToString(), Selected = a.Id == model.AuthorId }).ToList();
+			model.PublisherList = publisherService.Get().Select(a => new SelectListItem { Text = a.PublisherName, Value = a.Id.ToString(), Selected = a.Id == model.PubhlisherId }).ToList();
+			model.GenreList = genreService.Get().Select(a => new SelectListItem { Text = a.Name, Value = a.Id.ToString(), Selected = a.Id == model.GenreId }).ToList();
             return View(model);
         }
 
@@ -73,7 +74,7 @@ namespace BalekShop.Controllers
             var result = bookService.Update(model);
             if (result)
             {
-                return RedirectToAction("Get");
+                return RedirectToAction(nameof(Get));
             }
             TempData["msg"] = "error-server";
             return View(model);
@@ -84,7 +85,7 @@ namespace BalekShop.Controllers
         {
 
             var result = bookService.Delete(id);
-            return RedirectToAction("Get");
+            return RedirectToAction(nameof(Get));
         }
 
         public IActionResult Get()
