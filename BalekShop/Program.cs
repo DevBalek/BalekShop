@@ -10,7 +10,7 @@ using Microsoft.Extensions.Options;
 using BalekShop.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//Test case
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
